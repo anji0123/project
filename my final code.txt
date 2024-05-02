@@ -1,0 +1,35 @@
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import window, approx_count_distinct, collect_list
+from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+
+schema = StructType([
+    StructField("timestamp", TimestampType(), True),
+    StructField("user_id", StringType(), True),
+    StructField("action", StringType(), True)
+])
+
+spark = SparkSession.builder \
+    .appName("UserSessionTracking") \
+    .getOrCreate()
+
+sample_data_df = spark.readStream.schema(schema).csv("/FileStore/tables")
+display(sample_data_df)
+sample_data_df.printSchema()
+
+
+cleaned_data_df = sample_data_df \
+    .withColumn("timestamp", col("timestamp").cast("timestamp"))\
+    .withColumn("user_id", col("user_id").cast(IntegerType())) \
+    .filter(col("timestamp").isNotNull() & col("user_id").isNotNull() & col("action").isNotNull())
+
+
+sessionized_stream = sample_data_df \
+    .groupBy(window("timestamp", "5 minutes")) \
+    .agg(approx_count_distinct("user_id").alias("session_count"), collect_list("action").alias("actions"))
+
+query = sessionized_stream.writeStream .format("console").outputMode("update").trigger(processingTime="20 seconds").start()
+
+display(sessionized_stream)
+
+query.awaitTermination(100000)
+spark.stop()

@@ -1,0 +1,27 @@
+{
+    "BigQuery Schema": [{
+        "name":"employee_name",
+        "type":"STRING"
+    },
+    {
+        "name":"department",
+        "type":"STRING" 
+    },
+    {
+        "name":"state",
+        "type":"STRING" 
+    },
+    {
+        "name":"salary",
+        "type":"STRING" 
+    },
+    {
+        "name":"age",
+        "type":"STRING" 
+    },
+    {
+        "name":"bonus",
+        "type":"STRING" 
+    }
+]
+}
