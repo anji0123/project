@@ -1,0 +1,1535 @@
+Sql advanced with notes
+Data warehouse concepts
+Aure real time project videos
+Azure classes playlist
+Pyspark classes or course
+Python basics(teams videos) 
+Power bi classes ( teams videos) 
+Big data 9hours video
+
+Hands-on: Stream + Batch + Power BI dashboa📅
+ Phase 1 (Python + SQL) → Aug 25 – Oct 17
+
+
+---
+
+Week 1
+
+Aug 25 (Mon)
+
+Python: Variables & Data Types
+
+Theory Q: What is the difference between mutable and immutable types in Python?
+
+Code Q: Reverse a string without using slicing.
+
+
+SQL: SELECT, WHERE
+
+Theory Q: Difference between WHERE and HAVING clause?
+
+Code Q: Query employees with salary > 50,000.
+
+
+
+Aug 26 (Tue)
+
+Python: Lists & Tuples
+
+Theory Q: Why is a tuple faster than a list in Python?
+
+Code Q: Find the 2nd largest number in a list.
+
+
+SQL: ORDER BY, DISTINCT
+
+Theory Q: What is the use of DISTINCT?
+
+Code Q: Query top 3 highest salaries.
+
+
+
+Aug 27 (Wed)
+
+Python: Dictionaries & Sets
+
+Theory Q: Why dictionary is faster than list for lookups?
+
+Code Q: Count word frequency in a string.
+
+
+SQL: Aggregate Functions
+
+Theory Q: Difference between COUNT(*) and COUNT(column)?
+
+Code Q: Find average salary per department.
+
+
+
+Aug 28 (Thu)
+
+Python: If-else, Loops
+
+Theory Q: Difference between while and for loop?
+
+Code Q: Check if a number is prime.
+
+
+SQL: GROUP BY, HAVING
+
+Theory Q: Why can’t we use WHERE with aggregate functions?
+
+Code Q: Find departments with avg salary > 60k.
+
+
+
+Aug 29 (Fri)
+
+Python: Functions
+
+Theory Q: What are default arguments in Python functions?
+
+Code Q: Fibonacci series using recursion.
+
+
+SQL: JOINS (INNER)
+
+Theory Q: Difference between INNER JOIN and EQUIJOIN?
+
+Code Q: Query employees with their department names.
+
+
+
+
+---
+
+Week 2
+
+Sep 1 (Mon)
+
+Python: Lambda, map, filter, reduce
+
+Theory Q: When to use lambda vs def?
+
+Code Q: Square all numbers in a list using map.
+
+
+SQL: LEFT JOIN
+
+Theory Q: Difference between LEFT JOIN and INNER JOIN?
+
+Code Q: List all employees and their dept (even if dept missing).
+
+
+
+Sep 2 (Tue)
+
+Python: List comprehension
+
+Theory Q: Advantage of list comprehension?
+
+Code Q: Generate even numbers < 50.
+
+
+SQL: RIGHT JOIN
+
+Theory Q: Difference between LEFT and RIGHT join?
+
+Code Q: List all departments and employees (even if employee missing).
+
+
+
+Sep 3 (Wed)
+
+Python: Error handling (try, except)
+
+Theory Q: Difference between Exception and Error in Python?
+
+Code Q: Handle division by zero gracefully.
+
+
+SQL: FULL OUTER JOIN
+
+Theory Q: When to use FULL OUTER JOIN?
+
+Code Q: List all employees and all departments.
+
+
+
+Sep 4 (Thu)
+
+Python: File Handling
+
+Theory Q: Modes of opening files in Python?
+
+Code Q: Count number of lines in a file.
+
+
+SQL: UNION vs UNION ALL
+
+Theory Q: Difference between UNION and UNION ALL?
+
+Code Q: Combine employee names from two tables removing duplicates.
+
+
+
+Sep 5 (Fri)
+
+Python: OOP – Classes & Objects
+
+Theory Q: What is init in Python?
+
+Code Q: Create a Student class with attributes and display details.
+
+
+SQL: Subqueries
+
+Theory Q: Difference between correlated and non-correlated subquery?
+
+Code Q: Find employees whose salary > average salary.
+
+
+
+
+---
+
+Week 3
+
+Sep 8 (Mon)
+
+Python: OOP – Inheritance
+
+Theory Q: What is multiple inheritance? How does Python handle it?
+
+Code Q: Demonstrate single & multiple inheritance with classes.
+
+
+SQL: EXISTS & IN
+
+Theory Q: Difference between IN and EXISTS?
+
+Code Q: Find employees working in departments that exist in dept table.
+
+
+
+Sep 9 (Tue)
+
+Python: OOP – Polymorphism
+
+Theory Q: What is method overriding?
+
+Code Q: Implement method overriding with Animal → Dog class.
+
+
+SQL: ANY & ALL
+
+Theory Q: Difference between ANY and ALL operators?
+
+Code Q: Find employees earning more than ALL employees in dept 10.
+
+
+
+Sep 10 (Wed)
+
+Python: OOP – Encapsulation
+
+Theory Q: What is the purpose of private variables in Python?
+
+Code Q: Create a BankAccount class with deposit & withdraw methods.
+
+
+SQL: CASE statement
+
+Theory Q: When do we use CASE in SQL?
+
+Code Q: Show employees with grade ‘High’ if salary > 70k else ‘Low’.
+
+
+
+Sep 11 (Thu)
+
+Python: OOP – Abstraction
+
+Theory Q: What is an abstract class in Python?
+
+Code Q: Create an abstract class Vehicle with method drive().
+
+
+SQL: Stored Procedures (Intro)
+
+Theory Q: Difference between procedure and function?
+
+Code Q: Write a procedure to increase all salaries by 10%.
+
+
+
+Sep 12 (Fri)
+
+Python: Modules & Packages
+
+Theory Q: Difference between module and package in Python?
+
+Code Q: Create a package with math utilities and import it.
+
+
+SQL: Functions in SQL
+
+Theory Q: Difference between scalar and table-valued functions?
+
+Code Q: Write a function to return total salary of a department.
+
+
+
+
+---
+
+Week 4
+
+Sep 15 (Mon)
+
+Python: Iterators & Generators
+
+Theory Q: Difference between iterator and generator?
+
+Code Q: Write a generator for Fibonacci numbers.
+
+
+SQL: Indexing
+
+Theory Q: Difference between clustered and non-clustered index?
+
+Code Q: Create an index on salary column.
+
+
+
+Sep 16 (Tue)
+
+Python: Decorators
+
+Theory Q: What are decorators in Python?
+
+Code Q: Create a decorator to log function execution time.
+
+
+SQL: Views
+
+Theory Q: Advantages of using views?
+
+Code Q: Create a view showing employee name and dept.
+
+
+
+Sep 17 (Wed)
+
+Python: Itertools
+
+Theory Q: What is itertools used for?
+
+Code Q: Use itertools to generate all permutations of a list.
+
+
+SQL: CTEs
+
+Theory Q: Difference between CTE and subquery?
+
+Code Q: Use CTE to calculate running total of salaries.
+
+
+
+Sep 18 (Thu)
+
+Python: Collections Module
+
+Theory Q: What is Counter in collections?
+
+Code Q: Count character frequency in a string using Counter.
+
+
+SQL: Window Functions (ROW_NUMBER)
+
+Theory Q: Difference between RANK, DENSE_RANK, ROW_NUMBER?
+
+Code Q: Assign row numbers to employees ordered by salary.
+
+
+
+Sep 19 (Fri)
+
+Python: Multithreading
+
+Theory Q: Difference between multithreading and multiprocessing?
+
+Code Q: Create two threads printing even & odd numbers separately.
+
+
+SQL: Window Functions (RANK, DENSE_RANK)
+
+Theory Q: Difference between RANK and DENSE_RANK?
+
+Code Q: Find top 3 earners in each department.
+
+
+
+
+---
+
+Week 5
+
+Sep 22 (Mon)
+
+Python: Multiprocessing
+
+Theory Q: When to use multiprocessing instead of multithreading?
+
+Code Q: Use multiprocessing to calculate squares of a list.
+
+
+SQL: PARTITION BY
+
+Theory Q: Difference between GROUP BY and PARTITION BY?
+
+Code Q: Find running total of salary partitioned by dept.
+
+
+
+Sep 23 (Tue)
+
+Python: Virtual Environments
+
+Theory Q: Why do we use virtualenv in Python?
+
+Code Q: Create a virtual environment and install pandas.
+
+
+SQL: Common Aggregations with Window
+
+Theory Q: Difference between SUM() OVER and SUM() with GROUP BY?
+
+Code Q: Show cumulative salary by employee order.
+
+
+
+Sep 24 (Wed)
+
+Python: Pip & Package Management
+
+Theory Q: Difference between pip and conda?
+
+Code Q: Install numpy and check version in code.
+
+
+SQL: Recursive CTE
+
+Theory Q: What is a recursive CTE?
+
+Code Q: Print hierarchy of employees under a manager.
+
+
+
+Sep 25 (Thu)
+
+Python: JSON Handling
+
+Theory Q: Difference between json.load() and json.loads()?
+
+Code Q: Parse a JSON file of employee records.
+
+
+SQL: Transactions
+
+Theory Q: ACID properties in SQL?
+
+Code Q: Demonstrate BEGIN, COMMIT, ROLLBACK.
+
+
+
+Sep 26 (Fri)
+
+Python: Regex Basics
+
+Theory Q: What are greedy vs non-greedy regex?
+
+Code Q: Extract all emails from a text.
+
+
+SQL: Triggers
+
+Theory Q: What is a trigger in SQL?
+
+Code Q: Create a trigger to log updates on salary.
+
+
+
+
+---
+
+Week 6
+
+Sep 29 (Mon)
+
+Python: Advanced Regex
+
+Theory Q: What is the use of lookahead and lookbehind in regex?
+
+Code Q: Extract all numbers from a string using regex.
+
+
+SQL: Normalization (1NF–3NF)
+
+Theory Q: What is difference between 2NF and 3NF?
+
+Code Q: Normalize a sample employee table to 3NF.
+
+
+
+Sep 30 (Tue)
+
+Python: Date & Time
+
+Theory Q: Difference between datetime.now() and utcnow()?
+
+Code Q: Print current date in YYYY-MM-DD format.
+
+
+SQL: Denormalization
+
+Theory Q: When is denormalization used?
+
+Code Q: Merge dept and employee table into a denormalized view.
+
+
+
+Oct 1 (Wed)
+
+Python: Logging
+
+Theory Q: Why use logging instead of print()?
+
+Code Q: Write logs to file with timestamp.
+
+
+SQL: Stored Procedures Advanced
+
+Theory Q: Can stored procedures return multiple result sets?
+
+Code Q: Procedure to fetch top N salaries by dept.
+
+
+
+Oct 2 (Thu)
+
+Python: Unit Testing
+
+Theory Q: What is unittest in Python?
+
+Code Q: Write unittest for add(a, b).
+
+
+SQL: Functions Advanced
+
+Theory Q: Difference between deterministic and non-deterministic function?
+
+Code Q: Write function to calculate factorial.
+
+
+
+Oct 3 (Fri)
+
+Python: Itertools Advanced
+
+Theory Q: What is product() in itertools?
+
+Code Q: Generate cartesian product of two lists.
+
+
+SQL: Index Optimization
+
+Theory Q: When does index slow down performance?
+
+Code Q: Create composite index on (dept, salary).
+
+
+
+
+---
+
+Week 7
+
+Oct 6 (Mon)
+
+Python: CSV Handling
+
+Theory Q: Difference between csv.reader and csv.DictReader?
+
+Code Q: Read CSV and calculate column sum.
+
+
+SQL: Temp Tables
+
+Theory Q: Difference between temp table and table variable?
+
+Code Q: Create a temp table for employees with salary > 70k.
+
+
+
+Oct 7 (Tue)
+
+Python: Pandas Intro
+
+Theory Q: Difference between Series and DataFrame?
+
+Code Q: Read CSV into DataFrame and show first 5 rows.
+
+
+SQL: Optimization Basics
+
+Theory Q: How to check execution plan in SQL?
+
+Code Q: Compare query with and without index.
+
+
+
+Oct 8 (Wed)
+
+Python: Pandas Indexing
+
+Theory Q: Difference between loc and iloc?
+
+Code Q: Select all employees with salary > 50k using pandas.
+
+
+SQL: Query Tuning
+
+Theory Q: Difference between nested loop and hash join?
+
+Code Q: Rewrite slow query using join optimization.
+
+
+
+Oct 9 (Thu)
+
+Python: Pandas GroupBy
+
+Theory Q: Difference between groupby() and pivot_table()?
+
+Code Q: Find average salary per dept in pandas.
+
+
+SQL: Materialized Views
+
+Theory Q: Difference between normal view and materialized view?
+
+Code Q: Create materialized view of dept salaries.
+
+
+
+Oct 10 (Fri)
+
+Python: Pandas Merge & Join
+
+Theory Q: Difference between merge and join in pandas?
+
+Code Q: Merge employees with dept DataFrame.
+
+
+SQL: Partition Tables
+
+Theory Q: Why partition a table?
+
+Code Q: Partition employees table by dept.
+
+
+
+
+---
+
+Week 8
+
+Oct 13 (Mon)
+
+Python: Numpy Basics
+
+Theory Q: Difference between numpy array and Python list?
+
+Code Q: Create numpy array and calculate mean.
+
+
+SQL: OLAP vs OLTP
+
+Theory Q: Difference between OLAP and OLTP?
+
+Code Q: Show example schema for OLAP.
+
+
+
+Oct 14 (Tue)
+
+Python: Numpy Indexing & Slicing
+
+Theory Q: Difference between shallow copy and deep copy in numpy?
+
+Code Q: Slice numpy array into 2 halves.
+
+
+SQL: Fact & Dimension Tables
+
+Theory Q: Difference between fact and dimension tables?
+
+Code Q: Design star schema with employee and dept.
+
+
+
+Oct 15 (Wed)
+
+Python: Numpy Operations
+
+Theory Q: Difference between broadcasting and vectorization?
+
+Code Q: Multiply two numpy arrays element-wise.
+
+
+SQL: Slowly Changing Dimensions
+
+Theory Q: Difference between SCD Type 1 and Type 2?
+
+Code Q: Create SQL script for SCD Type 2 on employee table.
+
+
+
+Oct 16 (Thu)
+
+Python: Numpy Aggregations
+
+Theory Q: What are axis parameters in numpy?
+
+Code Q: Find sum across rows of 2D numpy array.
+
+
+SQL: Data Warehousing Basics
+
+Theory Q: Difference between star and snowflake schema?
+
+Code Q: Write query for sales fact joining product dimension.
+
+
+
+Oct 17 (Fri)
+
+Python: Final Revision + Mini Mock
+
+Theory Q: Explain Python memory management.
+
+Code Q: Write function to check if string is palindrome.
+
+
+SQL: Final Revision + Mini Mock
+
+Theory Q: Difference between OLAP cube and star schema?
+
+Code Q: Query top 5 earning employees with dept details.
+
+
+ Phase 2: Oct 20 – Dec 12 (DSA + PySpark)
+
+Oct 20 (Mon)
+
+DSA: Arrays basics → Code: Reverse array | Theory: Array vs List
+
+PySpark: Intro, RDD vs DataFrame → Code: Load CSV | Theory: RDD vs DF
+
+
+Oct 21 (Tue)
+
+DSA: Prefix Sum → Code: Subarray sum = k | Theory: Time complexity of prefix sum
+
+PySpark: Transformations → Code: Word count | Theory: Lazy evaluation
+
+
+Oct 22 (Wed)
+
+DSA: Sliding Window (fixed) → Code: Max sum subarray k | Theory: Use case of sliding window
+
+PySpark: Actions → Code: Count distinct | Theory: Transformation vs Action
+
+
+Oct 23 (Thu)
+
+DSA: Sliding Window (variable) → Code: Longest substring w/o repeat | Theory: Role of HashMap
+
+PySpark: Joins → Code: Inner join DFs | Theory: Broadcast vs shuffle join
+
+
+Oct 24 (Fri)
+
+DSA: Two pointers → Code: 2-sum sorted | Theory: Two-pointer use
+
+PySpark: Aggregations → Code: GroupBy sum, avg | Theory: groupBy vs reduceByKey
+
+
+Oct 27 (Mon)
+
+DSA: Binary Search basics → Code: Search rotated array | Theory: Complexity
+
+PySpark: Window functions → Code: Rank by salary | Theory: PartitionBy
+
+
+Oct 28 (Tue)
+
+DSA: Binary Search on Answer → Code: Min capacity to ship | Theory: Monotonic function search
+
+PySpark: UDF → Code: Clean string with UDF | Theory: UDF disadvantages
+
+
+Oct 29 (Wed)
+
+DSA: Sorting → Code: Quicksort | Theory: MergeSort vs QuickSort
+
+PySpark: Caching → Code: Cache DF | Theory: Cache vs Persist
+
+
+Oct 30 (Thu)
+
+DSA: Hashing basics → Code: First non-repeating char | Theory: HashMap vs HashSet
+
+PySpark: Partitioning → Code: Repartition DF | Theory: Repartition vs Coalesce
+
+
+Oct 31 (Fri)
+
+DSA: Hashing apps → Code: Subarray XOR = k | Theory: Hash collisions
+
+PySpark: Broadcast → Code: Broadcast join | Theory: Benefits of broadcast var
+
+
+Nov 3 (Mon)
+
+DSA: Stacks basics → Code: Valid parentheses | Theory: Stack applications
+
+PySpark: File formats → Code: Read Parquet | Theory: Parquet vs CSV
+
+
+Nov 4 (Tue)
+
+DSA: Queue basics → Code: Implement queue with stack | Theory: Queue uses
+
+PySpark: Checkpointing → Code: Add checkpoint | Theory: Checkpoint vs cache
+
+
+Nov 5 (Wed)
+
+DSA: Monotonic stack → Code: Next greater element | Theory: Why monotonic stack?
+
+PySpark: Accumulators → Code: Count errors | Theory: When to use accumulator
+
+
+Nov 6 (Thu)
+
+DSA: Linked list basics → Code: Reverse LL | Theory: Singly vs doubly LL
+
+PySpark: Cluster manager → Code: Run on local vs yarn | Theory: Spark on YARN vs Standalone
+
+
+Nov 7 (Fri)
+
+DSA: Linked list apps → Code: Detect cycle | Theory: Floyd’s algorithm
+
+PySpark: Data skew → Code: Salting example | Theory: What is data skew?
+
+
+Nov 10 (Mon)
+
+DSA: Recursion basics → Code: Factorial | Theory: Stack frame
+
+PySpark: Catalyst optimizer → Code: Explain plan | Theory: Role of optimizer
+
+
+Nov 11 (Tue)
+
+DSA: Recursion apps → Code: Generate subsets | Theory: Recursion vs iteration
+
+PySpark: Tungsten engine → Code: Simple DF ops | Theory: Tungsten advantages
+
+
+Nov 12 (Wed)
+
+DSA: Backtracking → Code: N-Queens | Theory: Backtracking vs brute force
+
+PySpark: Partition tuning → Code: Repartition before join | Theory: Shuffle partitions
+
+
+Nov 13 (Thu)
+
+DSA: Greedy basics → Code: Activity selection | Theory: When greedy works?
+
+PySpark: Joins perf → Code: Broadcast join | Theory: Skew join handling
+
+
+Nov 14 (Fri)
+
+DSA: Greedy apps → Code: Min coins change | Theory: Greedy vs DP
+
+PySpark: Serialization → Code: Kryo serializer | Theory: Why serialization matters?
+
+
+Nov 17 (Mon)
+
+DSA: DP basics → Code: Fibonacci DP | Theory: Memoization vs tabulation
+
+PySpark: Cluster tuning → Code: Executor config | Theory: Driver vs Executor
+
+
+Nov 18 (Tue)
+
+DSA: DP arrays → Code: Max subarray sum | Theory: Kadane’s algorithm
+
+PySpark: Shuffle → Code: Wide vs narrow trans | Theory: Shuffle cost
+
+
+Nov 19 (Wed)
+
+DSA: DP grid → Code: Min path sum | Theory: DP states explanation
+
+PySpark: AQE → Code: Enable AQE | Theory: AQE benefits
+
+
+Nov 20 (Thu)
+
+DSA: DP subsequence → Code: LCS | Theory: Applications of LCS
+
+PySpark: Joins AQE → Code: Skew join fix | Theory: AQE join strategies
+
+
+Nov 21 (Fri)
+
+DSA: DP knapsack → Code: 0/1 Knapsack | Theory: Top-down vs bottom-up
+
+PySpark: Partition strategy → Code: Hash vs range partition | Theory: Pros/cons
+
+
+Nov 24 (Mon)
+
+DSA: Trees basics → Code: Inorder traversal | Theory: BST vs Binary Tree
+
+PySpark: Serialization deep → Code: Kryo example | Theory: Serialization overhead
+
+
+Nov 25 (Tue)
+
+DSA: Trees DFS → Code: Max depth | Theory: Preorder vs Postorder
+
+PySpark: Resource tuning → Code: Spark conf example | Theory: GC in Spark
+
+
+Nov 26 (Wed)
+
+DSA: Trees BFS → Code: Level order traversal | Theory: BFS vs DFS usage
+
+PySpark: Spill → Code: Sort merge join spill | Theory: Spill to disk
+
+
+Nov 27 (Thu)
+
+DSA: Binary Tree paths → Code: Root to leaf sum | Theory: Recursion in trees
+
+PySpark: Checkpointing apps → Code: Streaming checkpoint | Theory: Use cases
+
+
+Nov 28 (Fri)
+
+DSA: BST basics → Code: Search BST | Theory: Why BST?
+
+PySpark: Skew tuning → Code: Salting keys | Theory: Handling skew keys
+
+
+Dec 1 (Mon)
+
+DSA: BST ops → Code: Insert in BST | Theory: Balance in BST
+
+PySpark: Catalyst plans → Code: df.explain | Theory: Physical vs logical plan
+
+
+Dec 2 (Tue)
+
+DSA: Heaps basics → Code: Heapify | Theory: Heap vs PriorityQueue
+
+PySpark: Memory tuning → Code: Spark conf memory | Theory: Spill prevention
+
+
+Dec 3 (Wed)
+
+DSA: Heap apps → Code: Kth largest element | Theory: Heap use cases
+
+PySpark: Broadcast tuning → Code: Cache + broadcast | Theory: Perf benefits
+
+
+Dec 4 (Thu)
+
+DSA: Graph basics → Code: BFS graph | Theory: Adj matrix vs list
+
+PySpark: AQE partitions → Code: Coalesce partitions | Theory: AQE coalescing
+
+
+Dec 5 (Fri)
+
+DSA: Graph DFS → Code: Connected components | Theory: Recursion stack depth
+
+PySpark: Shuffle deep → Code: Map vs reduce side join | Theory: Shuffle mechanics
+
+
+Dec 8 (Mon)
+
+DSA: Graph shortest path → Code: Dijkstra | Theory: Greedy in graphs
+
+PySpark: Tungsten deep → Code: Encoders | Theory: Tungsten execution
+
+
+Dec 9 (Tue)
+
+DSA: Graph MST → Code: Kruskal | Theory: Union-Find DS
+
+PySpark: CBO → Code: Spark SQL with stats | Theory: Cost-based optimizer
+
+
+Dec 10 (Wed)
+
+DSA: Graph cycle → Code: Detect cycle | Theory: Directed vs undirected cycles
+
+PySpark: Spark SQL → Code: Register temp table | Theory: SQL vs DF perf
+
+
+Dec 11 (Thu)
+
+DSA: Graph topological sort → Code: Kahn’s algo | Theory: DAG in graphs
+
+PySpark: Catalyst rule → Code: Explain join reordering | Theory: Catalyst benefits
+
+
+Dec 12 (Fri)
+
+DSA: Graph advanced → Code: Bellman-Ford | Theory: Neg cycle detection
+
+PySpark: Wrap-up → Code: Word count DF | Theory: Spark internals overview
+
+
+
+---
+
+🔹 Phase 3: Dec 15 – Jan 23 (DW + Azure)
+
+Dec 15 (Mon)
+
+DW: Basics of OLTP vs OLAP → Code: Star schema SQL query | Theory: OLAP vs OLTP difference
+
+Azure: Storage intro → Code: Upload file to Blob | Theory: Blob vs Data Lake
+
+
+Dec 16 (Tue)
+
+DW: Star vs Snowflake → Code: Write fact-dim join | Theory: Which schema is better?
+
+Azure: ADLS Gen2 → Code: Mount storage in Spark | Theory: ADLS benefits
+
+
+Dec 17 (Wed)
+
+DW: Fact tables → Code: Aggregate fact data | Theory: Fact table types
+
+Azure: Azure SQL DB → Code: Connect via Python | Theory: PaaS vs IaaS
+[26/08, 9:25 am] anji❤: Phase 3: Azure Data Engineering (Dec 18 – Feb 27)
+
+
+---
+
+Week 13 (Dec 18 – Dec 19)
+
+(Short week since we start on Thursday)
+
+Dec 18 (Thu)
+
+Topic: Intro to Azure Data Services
+
+Theory: Overview of Azure SQL DB, Synapse, Data Lake, Data Factory
+
+Hands-on: Create free Azure account & explore portal
+
+
+Dec 19 (Fri)
+
+Topic: Azure Storage Accounts
+
+Theory: Types (Blob, ADLS Gen2, Queue, Table)
+
+Hands-on: Create a Blob container, upload/download files using Azure Portal & Python SDK
+
+
+
+---
+
+Week 14 (Dec 22 – Dec 26)
+
+Dec 22 (Mon)
+
+Topic: Azure Data Lake Storage Gen2
+
+Theory: Hierarchical namespace, access control (RBAC, ACL)
+
+Hands-on: Mount ADLS in Databricks
+
+
+Dec 23 (Tue)
+
+Topic: Azure Blob Storage
+
+Theory: Hot vs Cool vs Archive tiers
+
+Hands-on: Lifecycle management policy
+
+
+Dec 24 (Wed)
+
+Topic: Azure Files & Queues
+
+Theory: Use cases of File shares & Queues
+
+Hands-on: Create queue and push messages
+
+
+Dec 25 (Thu) 🎄 Holiday
+
+Dec 26 (Fri)
+
+Topic: Azure Data Factory (ADF) Basics
+
+Theory: Pipelines, Linked Services, Datasets
+
+Hands-on: Create pipeline to copy CSV → Blob
+
+
+
+---
+
+Week 15 (Dec 29 – Jan 2)
+
+Dec 29 (Mon)
+
+Topic: ADF Copy Activity
+
+Theory: Integration Runtime, Data movement
+
+Hands-on: Copy data Blob → SQL DB
+
+
+Dec 30 (Tue)
+
+Topic: ADF Data Flows
+
+Theory: Mapping & Wrangling data flows
+
+Hands-on: Transform JSON → Parquet
+
+
+Dec 31 (Wed)
+
+Topic: ADF Triggers & Monitoring
+
+Theory: Schedule, Event, Tumbling Window triggers
+
+Hands-on: Trigger pipeline every 1 hr
+
+
+Jan 1 (Thu) 🎉 Holiday
+
+Jan 2 (Fri)
+
+Topic: ADF Parameters & Variables
+
+Theory: Dynamic content, pipeline reusability
+
+Hands-on: Parametrize source/destination paths
+
+
+
+---
+
+Week 16 (Jan 5 – Jan 9)
+
+Jan 5 (Mon)
+
+Topic: Azure Synapse Analytics – Intro
+
+Theory: Dedicated SQL Pool vs Serverless SQL Pool
+
+Hands-on: Create Synapse workspace
+
+
+Jan 6 (Tue)
+
+Topic: Synapse Serverless Queries
+
+Theory: Query Parquet/CSV files directly from Data Lake
+
+Hands-on: Run OPENROWSET queries
+
+
+Jan 7 (Wed)
+
+Topic: Dedicated SQL Pools
+
+Theory: Distribution methods (Round Robin, Hash, Replicated)
+
+Hands-on: Create fact & dimension tables
+
+
+Jan 8 (Thu)
+
+Topic: Synapse Pipelines vs ADF
+
+Theory: Similarities & differences
+
+Hands-on: Build Synapse pipeline for ETL
+
+
+Jan 9 (Fri)
+
+Topic: Synapse Security
+
+Theory: Row-level security, column-level security
+
+Hands-on: Implement RLS
+
+
+
+---
+
+Week 17 (Jan 12 – Jan 16)
+
+Jan 12 (Mon)
+
+Topic: Azure Databricks Intro
+
+Theory: Apache Spark, Workspace setup
+
+Hands-on: Create Databricks cluster
+
+
+Jan 13 (Tue)
+
+Topic: Databricks Notebooks
+
+Theory: PySpark basics (DataFrame, RDD)
+
+Hands-on: Read CSV & run transformations
+
+
+Jan 14 (Wed)
+
+Topic: Databricks & ADLS
+
+Theory: Mounting ADLS, service principals
+
+Hands-on: Mount ADLS to Databricks
+
+
+Jan 15 (Thu)
+
+Topic: Databricks Delta Lake
+
+Theory: ACID transactions, Time travel
+
+Hands-on: Create Delta table & update data
+
+
+Jan 16 (Fri)
+
+Topic: Databricks Optimizations
+
+Theory: Caching, Partitioning, Z-Ordering
+
+Hands-on: Optimize query performance
+
+
+
+---
+
+Week 18 (Jan 19 – Jan 23)
+
+Jan 19 (Mon)
+
+Topic: Azure Event Hub
+
+Theory: Event streaming basics
+
+Hands-on: Send events from producer
+
+
+Jan 20 (Tue)
+
+Topic: Azure Stream Analytics
+
+Theory: Real-time queries on streams
+
+Hands-on: Write query to aggregate events in real-time
+
+
+Jan 21 (Wed)
+
+Topic: Databricks Structured Streaming
+
+Theory: Spark streaming concepts
+
+Hands-on: Stream data from Event Hub → Databricks
+
+
+Jan 22 (Thu)
+
+Topic: Azure Data Lake + Streaming
+
+Theory: Landing zones (raw, curated, trusted)
+
+Hands-on: Store real-time data into ADLS
+
+
+Jan 23 (Fri)
+
+Topic: Kafka vs Event Hub
+
+Theory: Differences & integration
+
+Hands-on: Compare throughput test
+
+
+
+---
+
+Week 19 (Jan 26 – Jan 30)
+
+Jan 26 (Mon) 🇮🇳 Holiday (Republic Day)
+
+Jan 27 (Tue)
+
+Topic: Azure Functions (Serverless)
+
+Theory: Event-driven compute
+
+Hands-on: Function to process Blob trigger
+
+
+Jan 28 (Wed)
+
+Topic: Logic Apps
+
+Theory: Low-code workflows
+
+Hands-on: Logic App to send email on Blob upload
+
+
+Jan 29 (Thu)
+
+Topic: Azure Key Vault
+
+Theory: Secrets, Keys, Certificates
+
+Hands-on: Store SQL password, access in ADF
+
+
+Jan 30 (Fri)
+
+Topic: Monitoring & Logging
+
+Theory: Azure Monitor, Log Analytics, Alerts
+
+Hands-on: Enable diagnostic logs for Data Factory
+
+
+
+---
+
+Week 20 (Feb 2 – Feb 6)
+
+Feb 2 (Mon)
+
+Topic: Azure DevOps Basics
+
+Theory: Repos, Pipelines, Boards
+
+Hands-on: Create repo for SQL scripts
+
+
+Feb 3 (Tue)
+
+Topic: CI/CD for Data Factory
+
+Theory: ARM templates, Git integration
+
+Hands-on: Deploy ADF pipeline via DevOps
+
+
+Feb 4 (Wed)
+
+Topic: CI/CD for Synapse
+
+Theory: Deployment pipelines
+
+Hands-on: Publish Synapse artifacts via DevOps
+
+
+Feb 5 (Thu)
+
+Topic: Databricks CI/CD
+
+Theory: Notebooks versioning & deployment
+
+Hands-on: Use DevOps pipeline for Databricks
+
+
+Feb 6 (Fri)
+
+Topic: Infra as Code (IaC)
+
+Theory: Bicep, Terraform
+
+Hands-on: Deploy Storage + ADF using Bicep
+
+
+
+---
+
+Week 21 (Feb 9 – Feb 13)
+
+Feb 9 (Mon)
+
+Topic: Azure Data Security
+
+Theory: RBAC, Private Endpoints, Managed Identities
+
+Hands-on: Restrict access via private endpoint
+
+
+Feb 10 (Tue)
+
+Topic: Encryption in Azure
+
+Theory: SSE, CSE, TDE
+
+Hands-on: Enable TDE for SQL DB
+
+
+Feb 11 (Wed)
+
+Topic: Networking in Azure
+
+Theory: VNet, Subnets, Service Endpoints
+
+Hands-on: Secure Synapse with VNet
+
+
+Feb 12 (Thu)
+
+Topic: Cost Management
+
+Theory: Azure Pricing, Budgets
+
+Hands-on: Set budget alerts
+
+
+Feb 13 (Fri)
+
+Topic: Governance
+
+Theory: Policies, Blueprints
+
+Hands-on: Apply policy to restrict VM size
+
+
+
+---
+
+Week 22 (Feb 16 – Feb 20)
+
+Feb 16 (Mon)
+
+Topic: Data Modeling in Azure
+
+Theory: Dimensional modeling (facts & dimensions)
+
+Hands-on: Build star schema in Synapse
+
+
+Feb 17 (Tue)
+
+Topic: Slowly Changing Dimensions in Azure
+
+Theory: Type 1, 2, 3 in Synapse/ADF
+
+Hands-on: Implement SCD Type 2 in ADF
+
+
+Feb 18 (Wed)
+
+Topic: Performance Tuning in Azure SQL
+
+Theory: Indexing, statistics
+
+Hands-on: Query optimization demo
+
+
+Feb 19 (Thu)
+
+Topic: Synapse Best Practices
+
+Theory: Partitioning, Materialized Views
+
+Hands-on: Partition large fact table
+
+
+Feb 20 (Fri)
+
+Topic: Data Lake Best Practices
+
+Theory: Naming conventions, folder structure
+
+Hands-on: Design folder structure for Data Lake
+
+
+
+---
+
+Week 23 (Feb 23 – Feb 27)
+
+Feb 23 (Mon)
+
+Topic: Power BI with Azure
+
+Theory: DirectQuery vs Import from Synapse
+
+Hands-on: Connect Power BI to Synapse
+
+
+Feb 24 (Tue)
+
+Topic: Power BI with Databricks
+
+Theory: Lakehouse integration
+
+Hands-on: Connect Power BI to Delta Lake
+
+
+Feb 25 (Wed)
+
+Topic: End-to-End Project Discussion
+
+Theory: Batch + Streaming + Reporting
+
+Hands-on: Design project architecture
+
+
+Feb 26 (Thu)
+
+Topic: End-to-End Project Implementation (Part 1)
+
+Hands-on: Ingest data → Transform → Store in Synapse
+
+
+Feb 27 (Fri)
+
+Topic: End-to-End Project Implementation (Part 2)
