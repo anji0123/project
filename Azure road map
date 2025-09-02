@@ -120,22 +120,104 @@ Theory Q: Difference between LEFT JOIN and INNER JOIN?
 
 Code Q: List all employees and their dept (even if dept missing).
 
-
-
-Sep 2 (Tue)
-
-Python: List comprehension
-
-Theory Q: Advantage of list comprehension?
-
-Code Q: Generate even numbers < 50.
-
-
-SQL: RIGHT JOIN
-
-Theory Q: Difference between LEFT and RIGHT join?
-
-Code Q: List all departments and employees (even if employee missing).
+                                                                    🐍 Python: List Comprehension
+                                                                    ✅ Theory Q: What is the advantage of list comprehension?
+                                                                    List comprehension is a concise way to create lists in Python. Instead of using loops, you write everything in a single line.
+                                                                    
+                                                                    🔹 Advantages:
+                                                                    Cleaner syntax: Easier to read and write
+                                                                    
+                                                                    Faster execution: Optimized under the hood
+                                                                    
+                                                                    More Pythonic: Preferred in interviews and real codebases
+                                                                    
+                                                                    💡 Example comparison:
+                                                                    
+                                                                    python
+                                                                    # Traditional loop
+                                                                    evens = []
+                                                                    for i in range(50):
+                                                                        if i % 2 == 0:
+                                                                            evens.append(i)
+                                                                    
+                                                                    # List comprehension
+                                                                    evens = [i for i in range(50) if i % 2 == 0]
+                                                                    🧮 Code Q: Generate even numbers less than 50
+                                                                    python
+                                                                    even_numbers = [i for i in range(50) if i % 2 == 0]
+                                                                    print(even_numbers)
+                                                                    🔍 Output: [0, 2, 4, 6, ..., 48]
+                                                                    
+                                                                    🗃️ SQL: RIGHT JOIN
+                                                                    ✅ Theory Q: Difference between LEFT JOIN and RIGHT JOIN?
+                                                                    Join Type	Description
+                                                                    LEFT JOIN	Returns all rows from the left table, and matched rows from the right
+                                                                    RIGHT JOIN	Returns all rows from the right table, and matched rows from the left
+                                                                    💡 Think of it like this:
+                                                                    
+                                                                    LEFT JOIN = “Give me everything from Table A, even if Table B is missing”
+                                                                    
+                                                                    RIGHT JOIN = “Give me everything from Table B, even if Table A is missing”
+                                                                    
+                                                                    🧮 Code Q: List all departments and employees (even if employee missing)
+                                                                    Assume two tables:
+                                                                    
+                                                                    sql
+                                                                    Departments
+                                                                    -----------
+                                                                    DeptID | DeptName
+                                                                       1   | HR
+                                                                       2   | IT
+                                                                       3   | Finance
+                                                                    
+                                                                    Employees
+                                                                    ----------
+                                                                    EmpID | EmpName | DeptID
+                                                                     101  | Alice   | 1
+                                                                     102  | Bob     | 2
+                                                                    🔹 SQL Query:
+                                                                    sql
+                                                                    SELECT d.DeptName, e.EmpName
+                                                                    FROM Employees e
+                                                                    RIGHT JOIN Departments d ON e.DeptID = d.DeptID;
+                                                                    🔍 Output:
+                                                                    
+                                                                    Code
+                                                                    DeptName | EmpName
+                                                                    HR       | Alice
+                                                                    IT       | Bob
+                                                                    Finance  | NULL   -- No employee in Finance
+                                                                    🧠 How to Use This in Interviews
+                                                                    When asked:
+                                                                    
+                                                                    “What’s the difference between LEFT and RIGHT JOIN?”
+                                                                    
+                                                                    You say:
+                                                                    
+                                                                    “LEFT JOIN keeps all rows from the left table, RIGHT JOIN keeps all rows from the right. For example, if I want to list all departments even if no employee is assigned, I’d use RIGHT JOIN.”
+                                                                    
+                                                                    When asked:
+                                                                    
+                                                                    “How do you generate even numbers in Python?”
+                                                                    
+                                                                    You say:
+                                                                    
+                                                                    “I’d use list comprehension for cleaner syntax: [i for i in range(50) if i % 2 == 0].”
+                                                                    
+                                                                    Sep 2 (Tue)
+                                                                    
+                                                                    Python: List comprehension
+                                                                    
+                                                                    Theory Q: Advantage of list comprehension?
+                                                                    
+                                                                    Code Q: Generate even numbers < 50.
+                                                                    
+                                                                    
+                                                                    SQL: RIGHT JOIN
+                                                                    
+                                                                    Theory Q: Difference between LEFT and RIGHT join?
+                                                                    
+                                                                    Code Q: List all departments and employees (even if employee missing).
 
 
 
