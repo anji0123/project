@@ -1,0 +1,213 @@
+🏦 Project: Enterprise Loan Risk Data Pipeline for Fifth Third Bank
+📍 Phase 1: Requirement Gathering & Business Understanding
+🔹 Stakeholders Involved:
+Risk Analytics Team: Needs loan risk scoring for predictive modeling
+
+Compliance Team: Requires regulatory reports (e.g., Basel III, SOX)
+
+BI Team: Wants dashboards for executives
+
+IT Infrastructure Team: Provides access to on-prem systems
+
+🔹 Key Requirements:
+Ingest daily loan data from SQL Server, Oracle, and SFTP flat files
+
+Apply business rules: exclude loans < ₹1K, flag loans > ₹50L, calculate risk score
+
+Deliver curated data to Power BI via Synapse Analytics
+
+Ensure data security, auditability, and scalability
+
+🧱 Phase 2: Architecture Design
+🔹 High-Level Azure Architecture:
+Code
+[SQL Server / Oracle / SFTP]
+        ↓
+[Azure Data Factory]
+        ↓
+[Azure Data Lake Gen2]
+  ├── /raw
+  ├── /clean
+  └── /curated
+        ↓
+[Synapse Analytics]
+        ↓
+[Power BI]
+🔹 Design Decisions:
+ADF for orchestration due to native connectors and scheduling
+
+ADLS Gen2 for scalable, secure storage with hierarchical namespace
+
+Mapping Data Flows for no-code transformations
+
+Synapse Serverless SQL Pool for querying curated data
+
+Power BI DirectQuery for near real-time dashboards
+
+⚙️ Phase 3: Implementation Details
+🔹 Azure Data Factory (ADF)
+✅ Linked Services:
+SQL Server (Self-hosted IR)
+
+Oracle (via ODBC)
+
+SFTP (via binary dataset)
+
+ADLS Gen2 (OAuth with managed identity)
+
+✅ Datasets:
+Parameterized datasets for dynamic source selection
+
+Sink datasets pointing to ADLS folders
+
+✅ Pipelines:
+Ingestion Pipeline:
+
+Copy Activity from source to /raw
+
+Metadata logging (source name, row count, timestamp)
+
+Retry logic for transient failures
+
+Transformation Pipeline:
+
+Mapping Data Flow:
+
+Remove nulls
+
+Standardize date formats
+
+Join loan + customer data
+
+Calculate risk score:
+
+sql
+RiskScore = CASE 
+  WHEN CreditScore < 600 AND LoanAmount > 500000 THEN 'High'
+  WHEN CreditScore BETWEEN 600 AND 750 THEN 'Medium'
+  ELSE 'Low'
+END
+Sink to /curated zone
+
+✅ Triggers:
+Tumbling window trigger at 2 AM daily
+
+Event-based trigger for SFTP arrival
+
+🔹 Azure Data Lake Gen2
+✅ Folder Structure:
+Code
+/raw/loan_data/YYYY/MM/DD/
+/clean/loan_data/
+/curated/loan_risk/
+✅ File Format:
+Parquet for compression and schema evolution
+
+Partitioned by LoanDate for query optimization
+
+✅ Access Control:
+RBAC for team-level access
+
+ACLs for folder-level restrictions
+
+Integration with Azure Purview for lineage tracking
+
+🔹 Synapse Analytics
+✅ Views Created:
+vw_HighRiskLoans
+
+vw_LoanPerformanceByBranch
+
+vw_ComplianceSummary
+
+✅ Optimization:
+Partitioned external tables
+
+Columnstore indexes
+
+Materialized views for Power BI performance
+
+✅ Security:
+Row-Level Security (RLS) based on branch ID
+
+Auditing enabled via Synapse workspace logs
+
+🔹 Power BI
+✅ Connection Mode:
+DirectQuery for real-time dashboards
+
+Import mode for heavy visuals (monthly summaries)
+
+✅ Dashboards Built:
+Risk segmentation by region
+
+Loan approval trends
+
+Compliance metrics with drill-through
+
+🧪 Phase 4: Testing & Validation
+🔹 Unit Testing:
+Validate schema mapping
+
+Check transformation logic (e.g., risk score accuracy)
+
+🔹 Integration Testing:
+End-to-end pipeline run with sample data
+
+Validate Synapse views against source data
+
+🔹 Performance Testing:
+Pipeline SLA: < 30 minutes
+
+Synapse query latency: < 5 seconds for top queries
+
+🔹 UAT:
+Risk team signs off on scoring logic
+
+Compliance team validates regulatory fields
+
+BI team confirms dashboard filters and visuals
+
+🚨 Phase 5: Challenges & Solutions
+🔸 Challenge 1: Schema Drift in Vendor Files
+Problem: SFTP flat files had inconsistent columns
+
+Solution: Enabled schema drift in Mapping Data Flows, used derived columns to enforce schema
+
+🔸 Challenge 2: Late File Arrival
+Problem: SFTP files sometimes arrived after 2 AM
+
+Solution: Added event-based trigger with polling mechanism and retry logic
+
+🔸 Challenge 3: Power BI Slowness
+Problem: DirectQuery dashboards were slow
+
+Solution: Created summary tables in Synapse, switched to Import mode for heavy visuals
+
+🔸 Challenge 4: Data Sensitivity
+Problem: Customer PII needed masking
+
+Solution: Applied column-level encryption, used Key Vault for secrets, enforced RBAC
+
+✅ Phase 6: Go-Live & Monitoring
+🔹 Deployment:
+Pipelines moved to production via ARM templates
+
+CI/CD with Azure DevOps
+
+🔹 Monitoring:
+Azure Monitor alerts for pipeline failures
+
+Log Analytics for performance metrics
+
+Weekly health checks and SLA reports
+
+🔹 Audit & Governance:
+Data lineage tracked via Azure Purview
+
+Monthly audit reports generated from Synapse views
+
+Access logs reviewed by compliance team
+
+🧠 How You Speak in Interviews
+“At Fifth Third Bank, I designed and deployed a full-scale Azure ETL pipeline to centralize loan data from SQL Server, Oracle, and SFTP. Using ADF, we ingested and transformed data into ADLS Gen2, applying business rules like risk scoring and deduplication via Mapping Data Flows. We exposed curated data through Synapse views, optimized with partitioning and columnstore indexes. Power BI dashboards consumed these views for executive and compliance reporting. We faced schema drift, late file arrivals, and performance bottlenecks—all solved with dynamic flows, event triggers, and summary tables. The solution was secured with RBAC, Key Vault, and Purview lineage tracking.”
