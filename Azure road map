@@ -229,14 +229,125 @@ Theory Q: Difference between Exception and Error in Python?
 
 Code Q: Handle division by zero gracefully.
 
-
 SQL: FULL OUTER JOIN
-
+                                                                     
 Theory Q: When to use FULL OUTER JOIN?
-
+                                                                     
 Code Q: List all employees and all departments.
-
-
+                                                                     🐍 PYTHON: Error Handling (try, except)
+                                                                     🔹 What is Error Handling?
+                                                                     Imagine you're driving a car and suddenly a pothole appears. Instead of crashing, you slow down and steer around it. That’s what error handling does in code—it prevents your program from crashing when something unexpected happens.
+                                                                     
+                                                                     ✅ What’s the Difference Between Error and Exception?
+                                                                     Term	Meaning	Can be handled?
+                                                                     Error	Serious issues like syntax mistakes or memory overflow	❌ No
+                                                                     Exception	Runtime problems like dividing by zero or missing files	✅ Yes
+                                                                     Examples:
+                                                                     
+                                                                     SyntaxError: You forgot a colon or bracket → Error
+                                                                     
+                                                                     ZeroDivisionError: You tried dividing by 0 → Exception
+                                                                     
+                                                                     🔹 Why Use try and except?
+                                                                     To catch exceptions and respond gracefully.
+                                                                     
+                                                                     ✅ Syntax:
+                                                                     python
+                                                                     try:
+                                                                         # risky code
+                                                                     except ExceptionType:
+                                                                         # what to do if error happens
+                                                                     🧪 Code Example: Division by Zero
+                                                                     python
+                                                                     try:
+                                                                         a = int(input("Enter numerator: "))
+                                                                         b = int(input("Enter denominator: "))
+                                                                         result = a / b
+                                                                         print("Result:", result)
+                                                                     except ZeroDivisionError:
+                                                                         print("Oops! You can't divide by zero.")
+                                                                     except ValueError:
+                                                                         print("Please enter valid numbers.")
+                                                                     🔍 Explanation:
+                                                                     try: Runs the code that might fail
+                                                                     
+                                                                     except ZeroDivisionError: Catches division by zero
+                                                                     
+                                                                     except ValueError: Catches non-numeric input
+                                                                     
+                                                                     Program keeps running instead of crashing
+                                                                     
+                                                                     🧠 Bonus: finally and else
+                                                                     finally: Runs no matter what, even if there’s an error
+                                                                     
+                                                                     else: Runs only if no error occurs
+                                                                     
+                                                                     python
+                                                                     try:
+                                                                         print("Trying...")
+                                                                         x = 1 / 1
+                                                                     except:
+                                                                         print("Error occurred")
+                                                                     else:
+                                                                         print("No error!")
+                                                                     finally:
+                                                                         print("Always runs")
+                                                                     🛢️ SQL: FULL OUTER JOIN
+                                                                     🔹 What is a JOIN?
+                                                                     A JOIN connects two tables based on a common column—like matching employee IDs with department IDs.
+                                                                     
+                                                                     ✅ Types of JOINs
+                                                                     JOIN Type	What It Shows
+                                                                     INNER JOIN	Only matching rows from both tables
+                                                                     LEFT JOIN	All rows from left + matched from right
+                                                                     RIGHT JOIN	All rows from right + matched from left
+                                                                     FULL OUTER JOIN	All rows from both tables, matched or not
+                                                                     🔍 FULL OUTER JOIN Explained
+                                                                     Imagine two circles:
+                                                                     
+                                                                     One for employees
+                                                                     
+                                                                     One for departments
+                                                                     
+                                                                     A FULL OUTER JOIN gives you everything in both circles, even if there’s no match.
+                                                                     
+                                                                     🧪 Code Example: List All Employees and All Departments
+                                                                     sql
+                                                                     SELECT e.name, d.department_name
+                                                                     FROM employees e
+                                                                     FULL OUTER JOIN departments d
+                                                                     ON e.department_id = d.id;
+                                                                     ✅ What This Does:
+                                                                     Shows employees with departments
+                                                                     
+                                                                     Shows departments with no employees
+                                                                     
+                                                                     Shows employees without departments
+                                                                     
+                                                                     Fills missing values with NULL
+                                                                     
+                                                                     🧠 Real-Life Analogy
+                                                                     Think of a school:
+                                                                     
+                                                                     Some students are assigned to classes
+                                                                     
+                                                                     Some classes have no students
+                                                                     
+                                                                     Some students haven’t been assigned yet
+                                                                     
+                                                                     A FULL OUTER JOIN shows everyone and every class, even if they’re not connected.
+                                                                     
+                                                                     🎓 Summary for Sep 3 (Wed)
+                                                                     Topic	What You Learned
+                                                                     Python Error Handling	Use try, except, finally, else to manage runtime issues
+                                                                     Exception vs Error	Exceptions can be caught; errors usually crash
+                                                                     Division by Zero	Catch with ZeroDivisionError
+                                                                     SQL FULL OUTER JOIN	Combines all rows from both tables, even unmatched ones
+                                                                     Use Case	Great for audits, completeness checks, and data reconciliation
+                                                                     
+                                                               
+                                                                     
+                                                                     
 
 Sep 4 (Thu)
 
