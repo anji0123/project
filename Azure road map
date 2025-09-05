@@ -357,16 +357,108 @@ Theory Q: Modes of opening files in Python?
 
 Code Q: Count number of lines in a file.
 
-explain each and every term and all the stuff related to this concepts for thoery 
-and practical wise even for a kid to understand 
-and shoould also cover INterview point of view for a azure data engineer in 5/3 bank
-
 SQL: UNION vs UNION ALL
 
 Theory Q: Difference between UNION and UNION ALL?
 
 Code Q: Combine employee names from two tables removing duplicates.
 
+explain each and every term and all the stuff related to this concepts for thoery 
+and practical wise even for a kid to understand 
+and shoould also cover INterview point of view for a azure data engineer in 5/3 bank
+
+
+                                                           🐍 PYTHON: File Handling
+                                                           📘 Theory: Modes of Opening Files in Python
+                                                           When you open a file using open(), you tell Python what you want to do with that file. That’s called the mode.
+                                                           
+                                                           Mode	Description	Interview Insight
+                                                           'r'	Read mode (default). Opens file for reading. Fails if file doesn’t exist.	Used in ETL pipelines to read config or data files.
+                                                           'w'	Write mode. Creates file or overwrites existing one.	Used to write logs or export data. Risk: overwrites existing files.
+                                                           'a'	Append mode. Adds content to end of file.	Good for logging without losing previous entries.
+                                                           'x'	Exclusive creation. Fails if file exists.	Used when you want to ensure no overwrite happens.
+                                                           'b'	Binary mode. For non-text files (images, PDFs).	Used in secure data transfers or encryption.
+                                                           't'	Text mode. Default for reading/writing strings.	Most common for CSV, TXT, JSON files.
+                                                           'r+'	Read and write. Doesn’t truncate file.	Useful for updating config files or audit logs.
+                                                           💡 Real-world tip: In banking, file handling is often used to process batch files, audit logs, or secure data exports. You must handle files safely to avoid data loss or compliance issues.
+                                                           
+                                                           🧪 Code: Count Number of Lines in a File
+                                                           python
+                                                           def count_lines(filename):
+                                                               try:
+                                                                   with open(filename, 'r') as f:
+                                                                       lines = f.readlines()
+                                                                       return len(lines)
+                                                               except FileNotFoundError:
+                                                                   print("File not found.")
+                                                               except Exception as e:
+                                                                   print("Error:", e)
+                                                           
+                                                           # Example usage
+                                                           print(count_lines("transactions.txt"))
+                                                           ✅ Explanation:
+                                                           open(filename, 'r'): Opens file in read mode
+                                                           
+                                                           readlines(): Reads all lines into a list
+                                                           
+                                                           len(lines): Counts how many lines
+                                                           
+                                                           try-except: Handles missing file or other errors
+                                                           
+                                                           💡 Interview angle: You might be asked how to process large files efficiently. In that case, use a loop:
+                                                           
+                                                           python
+                                                           count = 0
+                                                           with open(filename, 'r') as f:
+                                                               for _ in f:
+                                                                   count += 1
+                                                           This avoids loading the whole file into memory—important for big data!
+                                                           
+                                                           🛢️ SQL: UNION vs UNION ALL
+                                                           📘 Theory: What’s the Difference?
+                                                           Clause	What It Does	Interview Insight
+                                                           UNION	Combines results from two queries and removes duplicates	Good for clean reporting or deduplicated dashboards
+                                                           UNION ALL	Combines results and keeps duplicates	Faster and better for raw data aggregation or audit logs
+                                                           💡 Real-world tip: In banking, you often merge data from multiple systems (e.g., loan and credit card systems). Use UNION when duplicates are bad (e.g., customer reports), and UNION ALL when you want full traceability.
+                                                           
+                                                           🧪 Code: Combine Employee Names from Two Tables (Remove Duplicates)
+                                                           sql
+                                                           SELECT name FROM employees_us
+                                                           UNION
+                                                           SELECT name FROM employees_india;
+                                                           ✅ Explanation:
+                                                           Combines names from both tables
+                                                           
+                                                           Removes duplicates automatically
+                                                           
+                                                           If you want to keep duplicates, use UNION ALL
+                                                           
+                                                           💡 Interview angle: You may be asked:
+                                                           
+                                                           How does UNION affect performance? (Answer: slower due to deduplication)
+                                                           
+                                                           How do you handle schema mismatch? (Answer: columns must match in number and type)
+                                                           
+                                                           🧠 How This Applies to Azure Data Engineering at 5/3 Bank
+                                                           🔹 File Handling
+                                                           You’ll work with Azure Data Lake, Blob Storage, or Synapse Pipelines that read/write files.
+                                                           
+                                                           You must know how to handle file formats (CSV, JSON, Parquet), manage access, and avoid overwriting sensitive data.
+                                                           
+                                                           🔹 SQL UNION
+                                                           You’ll often write SQL queries in Synapse or Databricks to merge data from multiple sources.
+                                                           
+                                                           In banking, this could mean combining customer data, transaction logs, or compliance reports.
+                                                           
+                                                           Understanding UNION vs UNION ALL helps you control data quality, performance, and auditability.
+                                                           
+                                                           🎓 Summary
+                                                           Concept	What You Learned	Real-World Relevance
+                                                           Python File Modes	'r', 'w', 'a', 'x', 'b', 't', 'r+'	Used in ETL, logging, secure file handling
+                                                           Line Counting	readlines() vs loop	Efficient file processing
+                                                           SQL UNION	Removes duplicates	Clean reporting
+                                                           SQL UNION ALL	Keeps duplicates	Raw data aggregation
+                                                           Interview Focus	Performance, deduplication, schema matching	Critical for banking data pipelines
 
 
 Sep 5 (Fri)
