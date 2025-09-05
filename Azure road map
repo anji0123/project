@@ -369,6 +369,14 @@ and shoould also cover INterview point of view for a azure data engineer in 5/3 
 
 
                                                            🐍 PYTHON: File Handling
+
+                                                                 r for read 
+                                                                 w for overwrite 
+                                                                 x for write if not exist 
+                                                                 a for append at end and also creates if not exist 
+                                                                 wb and rb for read and write binary 
+                                                                 r+ is to read and write and at position(file must exist)
+
                                                            📘 Theory: Modes of Opening Files in Python
                                                            When you open a file using open(), you tell Python what you want to do with that file. That’s called the mode.
                                                            
