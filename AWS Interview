@@ -161,3 +161,240 @@ Answer: I follow AWS blogs, take online courses, and build small projects to pra
 
 50. What’s your biggest strength?
 Answer: I’m resourceful. Even with limited experience, I find solutions, ask questions, and deliver results. I don’t give up easily.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. What’s the difference between DDL and DML in SQL?
+Answer: DDL (Data Definition Language) is used to define or change the structure of database objects—like tables, views, or indexes. Examples: CREATE, ALTER, DROP. DML (Data Manipulation Language) is used to manage data inside those objects. Examples: SELECT, INSERT, UPDATE, DELETE. Think of DDL as designing a form, and DML as filling it out.
+
+2. How do you design a star schema for reporting?
+Answer: A star schema has a central fact table (e.g., transactions) surrounded by dimension tables (e.g., customer, product, time). I designed one for fraud analytics:
+
+Fact table: transaction_id, amount, customer_id
+
+Dimensions: customer details, location, time This structure simplifies joins and speeds up queries for dashboards.
+
+3. What’s a surrogate key and why is it used?
+Answer: A surrogate key is a unique, system-generated identifier (like an auto-increment ID). It’s used instead of natural keys (like email or SSN) to avoid duplication, simplify joins, and handle changes in source systems.
+
+4. How do you handle slowly changing dimensions (SCD)?
+Answer: I’ve used SCD Type 1 to overwrite old data (e.g., address updates), and SCD Type 2 to keep history (e.g., tracking customer status changes). In Redshift, I used MERGE logic with effective dates and flags to manage Type 2.
+
+5. How do you write a query to find the top 5 customers by spend?
+Answer:
+
+sql
+SELECT customer_id, SUM(amount) AS total_spend  
+FROM transactions  
+GROUP BY customer_id  
+ORDER BY total_spend DESC  
+LIMIT 5;
+6. What’s the difference between PL/SQL and SQL?
+Answer: SQL is a query language. PL/SQL is Oracle’s procedural extension—it lets you write loops, conditions, and procedures. I’ve used PL/SQL for batch updates and stored procedures in legacy systems.
+
+7. How do you optimize a slow query?
+Answer: I check for:
+
+Missing indexes
+
+Unnecessary joins
+
+Large scans without filters
+
+Use of LIMIT, EXISTS, or WITH clauses I also analyze execution plans to find bottlenecks.
+
+8. What’s the role of indexes in query performance?
+Answer: Indexes speed up data retrieval by avoiding full table scans. I’ve used compound indexes on frequently queried columns like customer_id and transaction_date to improve performance.
+
+9. How do you use HiveQL for querying large datasets?
+Answer: HiveQL is SQL-like but runs on Hadoop. I’ve used it to query partitioned tables in HDFS, apply filters, and join datasets. Example:
+
+sql
+SELECT * FROM transactions WHERE year = 2023 AND amount > 1000;
+10. What’s the difference between SparkSQL and HiveQL?
+Answer: Both are SQL-like, but SparkSQL runs in-memory and is faster. HiveQL is disk-based and better for batch jobs. I prefer SparkSQL for interactive queries and HiveQL for scheduled reporting.
+
+🐍 Scripting & Automation (Python, KornShell)
+11. How do you use Python for data cleaning?
+Answer: I use pandas to drop nulls, convert data types, and apply business rules. Example:
+
+python
+df.dropna()  
+df['date'] = pd.to_datetime(df['date'])
+12. What’s the difference between a list and a dictionary in Python?
+Answer: A list is ordered and accessed by position. A dictionary is unordered and accessed by key. Example:
+
+python
+list = [1, 2, 3]  
+dict = {'name': 'Anji', 'role': 'Data Engineer'}
+13. How do you schedule Python scripts in production?
+Answer: I use cron jobs on Linux or AWS Lambda triggers. For example, I scheduled a daily ETL script using crontab -e with logging and error alerts.
+
+14. How do you use KornShell for automation?
+Answer: KornShell (ksh) is used for scripting in Unix. I’ve written scripts to move files, trigger ETL jobs, and log outputs. Example:
+
+ksh
+#!/bin/ksh  
+mv *.csv /data/archive  
+15. How do you handle exceptions in Python?
+Answer: Using try-except blocks:
+
+python
+try:  
+    process_data()  
+except Exception as e:  
+    print("Error:", e)
+16. How do you log events in Python scripts?
+Answer: Using the logging module:
+
+python
+import logging  
+logging.basicConfig(filename='etl.log', level=logging.INFO)  
+logging.info("Job started")
+17. How do you connect to a database using Python?
+Answer: Using psycopg2 for PostgreSQL or pyodbc for SQL Server:
+
+python
+import psycopg2  
+conn = psycopg2.connect(dbname="bank", user="admin", password="pass")
+18. How do you transform nested JSON in Python?
+Answer: Using json and pandas.json_normalize() to flatten the structure:
+
+python
+import json  
+from pandas import json_normalize  
+data = json.loads(raw_json)  
+df = json_normalize(data)
+19. How do you automate file ingestion from SFTP?
+Answer: Using paramiko in Python or shell scripts with scp. I’ve automated daily pulls, renamed files, and triggered ETL jobs.
+
+20. How do you validate schema and data types in Python?
+Answer: I use pandas.dtypes and custom checks:
+
+python
+assert df['amount'].dtype == 'float64'  
+assert df['date'].notnull().all()
+Let me pause here and ask: would you like me to continue with the next 30 questions covering ETL tools, cloud services, big data, and behavioral scenarios? I’ll keep the same detailed, beginner-friendly style.
+
+yes
+Awesome, Anji! Let’s continue with the next 30 detailed questions and answers, covering:
+
+✅ ETL tools and pipeline design
+
+✅ Cloud services (AWS, Azure, GCP)
+
+✅ Big data technologies (Hadoop, Hive, Spark, EMR)
+
+✅ Behavioral and scenario-based questions
+
+Each answer is crafted to reflect your 1.2 years of experience, with clear explanations that even a beginner could follow.
+
+🏗️ ETL Design & Tools (Questions 21–30)
+21. What are the key stages in an ETL pipeline?
+Answer: ETL stands for Extract, Transform, Load.
+
+Extract: Pull data from sources like databases, APIs, or files
+
+Transform: Clean, filter, join, and reshape the data
+
+Load: Store the final data into a warehouse like Redshift or Synapse In my project, I extracted banking data from PostgreSQL, transformed it using PySpark on EMR, and loaded it into Redshift.
+
+22. How do you design an ETL pipeline for incremental loads?
+Answer: I use a watermark column like last_updated or transaction_date to pull only new or changed records. In Glue, I added filters in the SQL logic and used partitioned S3 folders to track daily loads. This reduced processing time and cost.
+
+23. What’s the difference between batch and real-time ETL?
+Answer:
+
+Batch ETL runs at scheduled intervals (e.g., daily)
+
+Real-time ETL processes data as it arrives (e.g., using Kafka or Kinesis) I’ve worked mostly with batch ETL using Glue and EMR, but I understand real-time concepts like streaming ingestion and windowing.
+
+24. How do you use Informatica or SSIS for data integration?
+Answer: Informatica and SSIS are GUI-based ETL tools. I’ve used SSIS to extract data from SQL Server, apply transformations, and load into a warehouse. It’s drag-and-drop, but you can also write custom scripts for complex logic.
+
+25. How do you handle schema drift in ETL pipelines?
+Answer: Schema drift means the source schema changes unexpectedly. I use Glue’s dynamic frames to handle flexible schemas, and I validate column names and types before loading. I also log mismatches for review.
+
+26. What’s your approach to error handling and retries in ETL jobs?
+Answer: I wrap critical steps in try-except blocks (Python) and use Lambda + Step Functions for retries. I log errors to CloudWatch and send alerts if a job fails. This ensures reliability and quick recovery.
+
+27. How do you monitor ETL job health and performance?
+Answer: I use CloudWatch metrics, logs, and custom alerts. For example, I track job duration, error counts, and data volume processed. If a job runs longer than expected, I investigate Spark stages or input size.
+
+28. How do you design ETL pipelines for scalability and fault tolerance?
+Answer: I use distributed tools like Spark, partition data, and avoid single points of failure. I also use retries, checkpoints, and modular design so each step can be debugged independently.
+
+29. What’s the difference between ODI and Datastage?
+Answer: ODI (Oracle Data Integrator) and Datastage (IBM) are enterprise ETL tools. ODI uses ELT (push logic to the database), while Datastage uses traditional ETL. I’ve explored both and understand how they fit into large-scale data ecosystems.
+
+30. How do you version control ETL workflows and scripts?
+Answer: I use Git to track changes in Python scripts and Glue jobs. For visual tools like SSIS, I export packages and store them in repositories. This helps with rollback and collaboration.
+
+☁️ Cloud Services & Architecture (Questions 31–40)
+31. How do you use AWS Glue for ETL orchestration?
+Answer: Glue lets me schedule jobs, manage metadata, and run PySpark scripts. I use Glue crawlers to catalog data, and Glue jobs to transform and load it into Redshift. It’s serverless and easy to scale.
+
+32. What’s the difference between AWS EMR and Azure Databricks?
+Answer: Both run Spark, but:
+
+EMR is more customizable and integrates tightly with AWS
+
+Databricks has a notebook interface and built-in ML tools I’ve used EMR for PySpark jobs and explored Databricks during Azure training.
+
+33. How do you store and retrieve data from Amazon S3?
+Answer: I use boto3 in Python or Spark’s read.csv() to access S3. I organize data in folders by date and use partitioning for faster access.
+
+34. How do you secure data in AWS using IAM and KMS?
+Answer: IAM controls who can access services. KMS encrypts sensitive data. I assign roles to Glue and EMR, and use bucket policies to restrict access. For encryption, I enable SSE-KMS on S3.
+
+35. What’s your experience with Redshift for data warehousing?
+Answer: I’ve used Redshift to store transformed banking data. I designed tables with sort keys and distribution styles, and optimized queries for fraud analytics dashboards.
+
+36. How do you monitor cloud resources using CloudWatch or Azure Monitor?
+Answer: I use CloudWatch to track job metrics, set alarms, and view logs. In Azure, I’ve used Monitor to check pipeline status and resource usage.
+
+37. How do you compare BigQuery with Redshift?
+Answer: BigQuery is serverless and charges per query. Redshift is cluster-based and charges for storage and compute. BigQuery is great for ad-hoc queries; Redshift is better for structured, repeatable workloads.
+
+38. How do you use Lambda for event-driven workflows?
+Answer: I trigger Lambda when a file lands in S3 or a job finishes. It runs Python code to validate data, send alerts, or start Glue jobs. It’s lightweight and fast.
+
+39. How do you optimize cloud costs in data pipelines?
+Answer: I use spot instances in EMR, reduce job duration, and clean up unused resources. I also monitor usage with Cost Explorer and set budgets.
+
+40. How do you handle cross-region data replication in AWS?
+Answer: I use S3 replication rules or DataSync to copy data between regions. This helps with disaster recovery and global availability.
+
+🔍 Big Data Technologies (Questions 41–50)
+41. How do you ingest data into HDFS using Sqoop?
+Answer: I use Sqoop to pull data from relational databases into Hadoop. Example:
+
+bash
+sqoop import --connect jdbc:mysql://db --table transactions --target-dir /data/transactions
+42. What’s the role of Hive Metastore?
+Answer: It stores metadata about Hive tables—like schema, location, and partitions. Spark and other tools use it to understand how to read data.
+
+43. How do you write Spark jobs using PySpark or Scala?
+Answer: I use PySpark for transformations:
+
+python
+df = spark.read.csv("s3://data")  
+df = df.filter(df.amount > 1000)
+44. How do you tune Spark jobs for performance?
+Answer: I adjust partition sizes, use caching, and optimize joins. I also monitor stages in Spark UI and tweak executor memory and cores.
+
+45. What’s the difference between RDDs and DataFrames?
+Answer: RDDs are low-level and flexible. DataFrames are optimized and easier to use. I prefer DataFrames for SQL-like operations and better performance.
+
+46. How do you handle skewed data in Spark joins?
+Answer: I use salting (adding random keys), broadcast joins for small tables, and repartitioning. This avoids one node doing all the work.
+
+47. What’s your experience with EMR cluster configuration?
+Answer: I choose instance types based on workload, use auto-scaling, and configure bootstrap actions for setup. I monitor cluster health and terminate unused clusters to save cost.
+
+48. How do you use Hive partitions to improve query speed?
+Answer: I partition tables by date or region. Queries like WHERE date = '2025-09-06' only scan relevant partitions, reducing I/O.
+
+49. How do you manage job dependencies in Spark workflows?
+Answer: I use Airflow or Step Functions to define task order. Each Spark job outputs to a location that the next job reads from.
+
+50. How do you choose between Hadoop and Spark?
+Answer: Hadoop is good for batch processing and storage. Spark is faster and better for
