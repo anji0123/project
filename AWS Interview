@@ -1,0 +1,30 @@
+1. How did you build and optimize ETL pipelines using AWS Glue and EMR?
+Answer: In my project for Fifth Third Bank, I used AWS Glue to orchestrate ETL workflows that ingested transactional data from PostgreSQL, MySQL, and flat files into S3. I processed the data using PySpark on EMR, applying transformations and validations. To optimize performance, I implemented partitioning strategies, cached intermediate datasets, and used broadcast joins where applicable. These changes improved job execution time by ~20%.
+
+2. How do you ensure data quality in your pipelines?
+Answer: I use SQL and Python scripts to perform validation checks such as null filtering, duplicate detection, and schema conformity. For example, in our fraud analytics pipeline, I wrote SQL rules to flag anomalies and inconsistencies, which improved reporting accuracy by ~10%. I also integrated error handling in Glue jobs and monitored pipeline health using CloudWatch alerts.
+
+3. Explain how you modeled data in Amazon Redshift.
+Answer: I designed fact and dimension tables in Redshift to support fraud detection dashboards. I used sort keys and distribution styles to optimize query performance. For example, customer and transaction data were joined using surrogate keys, and I applied compression encoding to reduce storage costs. The final datasets were consumed by Power BI for stakeholder reporting.
+
+4. What’s the difference between AWS Glue and EMR, and when would you use each?
+Answer: AWS Glue is serverless and ideal for lightweight ETL tasks with built-in crawlers and cataloging. EMR offers more control and scalability for complex Spark workloads. In my project, I used Glue for orchestration and metadata management, while EMR handled heavy PySpark transformations due to its flexibility in tuning and resource allocation.
+
+5. How do you monitor and optimize Spark jobs on EMR?
+Answer: I monitored job metrics using CloudWatch and EMR logs. For optimization, I tuned Spark configurations like executor memory, parallelism, and shuffle partitions. I also profiled job stages using Spark UI to identify bottlenecks. These efforts helped reduce compute costs by ~10% and improved reliability.
+
+💬 Behavioral Questions (Amazon Leadership Principles)
+6. Tell me about a time you solved a complex data problem.
+Answer: While working on a fraud analytics pipeline, I noticed inconsistencies in transaction timestamps. I investigated the source systems and discovered timezone mismatches. I proposed a normalization step using Python and Spark, which resolved the issue and improved dashboard accuracy. This showed ownership and bias for action.
+
+7. How do you handle ambiguity when requirements aren’t clear?
+Answer: In one case, the reporting team requested a dataset without specifying filters. I proactively scheduled a meeting, asked clarifying questions, and proposed a schema based on historical usage. This reduced rework and improved stakeholder satisfaction. I believe in diving deep and earning trust.
+
+8. Describe a time you improved a process.
+Answer: Initially, our ETL jobs required manual monitoring. I implemented error logging and automated retries using Lambda and Step Functions. This reduced manual effort by ~15% and improved pipeline reliability. It reflects my focus on delivering results and inventing simple solutions.
+
+9. How do you prioritize tasks when working under pressure?
+Answer: I break down tasks by urgency and impact. For example, when a dashboard was delayed due to data issues, I prioritized fixing the pipeline over non-critical enhancements. I communicated timelines clearly and ensured the team stayed aligned. This shows customer obsession and ownership.
+
+10. Why Amazon?
+Answer: Amazon’s scale and data culture excite me. I want to contribute to systems that handle exabytes of data and millions of workloads. My experience with AWS services and passion for building reliable data pipelines align well with Amazon’s mission to be Earth’s most customer-centric company.
