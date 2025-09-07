@@ -484,6 +484,91 @@ Theory Q: Difference between correlated and non-correlated subquery?
 
 Code Q: Find employees whose salary > average salary.
 
+                                                               🐍 PYTHON: OOP – Classes & Objects
+                                                               ✅ Theory Q: What is __init__ in Python?
+                                                               __init__ is a special method in Python called a constructor. It runs automatically when you create an object from a class.
+                                                               
+                                                               🔍 Think of it like this:
+                                                               Imagine a class is a blueprint for building a robot. The __init__ method is the setup button that gives each robot its name, color, and size when it’s built.
+                                                               
+                                                               📘 Technical Explanation:
+                                                               __init__ is used to initialize attributes of an object.
+                                                               
+                                                               It always takes self as the first parameter (which refers to the object itself).
+                                                               
+                                                               You can pass other parameters to set values like name, age, etc.
+                                                               
+                                                               🧠 Interview Tip:
+                                                               If asked “What does __init__ do?”, say:
+                                                               
+                                                               “It’s the constructor method that initializes object attributes when a class instance is created. It helps set up the object’s internal state.”
+                                                               
+                                                               💻 Code Q: Create a Student class with attributes and display details
+                                                               python
+                                                               class Student:
+                                                                   def __init__(self, name, roll_number, age, grade):
+                                                                       self.name = name
+                                                                       self.roll_number = roll_number
+                                                                       self.age = age
+                                                                       self.grade = grade
+                                                               
+                                                                   def display_details(self):
+                                                                       print("Student Name:", self.name)
+                                                                       print("Roll Number:", self.roll_number)
+                                                                       print("Age:", self.age)
+                                                                       print("Grade:", self.grade)
+                                                               
+                                                               # Creating an object
+                                                               student1 = Student("Anji", 101, 22, "A")
+                                                               student1.display_details()
+                                                               🧠 Interview Tip:
+                                                               Explain how self binds the attributes to the object, and how methods like display_details() allow encapsulated access to data.
+                                                               
+                                                               🧮 SQL: Subqueries
+                                                               ✅ Theory Q: Difference Between Correlated and Non-Correlated Subqueries
+                                                               Feature	Non-Correlated Subquery	Correlated Subquery
+                                                               Dependency	Independent of outer query	Depends on outer query
+                                                               Execution	Runs once	Runs for every row in outer query
+                                                               Performance	Faster	Slower due to repeated execution
+                                                               Use Case	Aggregate comparisons, filtering	Row-by-row filtering, conditional logic
+                                                               Example Use	Compare salary to overall average	Compare salary to department average
+                                                               🧠 Think of it like this:
+                                                               Non-Correlated: Like checking the average score of the whole class once.
+                                                               
+                                                               Correlated: Like checking if each student scored above their own section’s average.
+                                                               
+                                                               💻 Code Q: Find employees whose salary > average salary
+                                                               ✅ Non-Correlated Subquery Example:
+                                                               sql
+                                                               SELECT employee_name, salary
+                                                               FROM employees
+                                                               WHERE salary > (SELECT AVG(salary) FROM employees);
+                                                               SELECT AVG(salary) runs once and returns a single value.
+                                                               
+                                                               The outer query compares each employee’s salary to that value.
+                                                               
+                                                               ✅ Correlated Subquery Example (by department):
+                                                               sql
+                                                               SELECT employee_name, salary, department_id
+                                                               FROM employees e
+                                                               WHERE salary > (
+                                                                   SELECT AVG(salary)
+                                                                   FROM employees
+                                                                   WHERE department_id = e.department_id
+                                                               );
+                                                               The subquery runs for each employee, calculating the average salary of their department.
+                                                               
+                                                               This is useful in banking analytics to compare performance or detect anomalies.
+                                                               
+                                                               🧠 Interview Tip for Azure Data Engineer at Fifth Third Bank:
+                                                               “In fraud analytics, I’ve used correlated subqueries to compare transaction amounts against customer-specific averages. For example, flagging transactions that exceed a customer’s typical spend pattern. In Azure Synapse or SQL Server, I optimize these queries using indexed views or materialized results when performance is critical.”
+                                                               
+                                                               🧩 Summary for Interviews
+                                                               Concept	What to Say in Interviews
+                                                               __init__	“It’s the constructor that initializes object attributes when an instance is created.”
+                                                               Student Class	“I used OOP to encapsulate student data and methods for clean, reusable code.”
+                                                               Subqueries	“I understand both correlated and non-correlated subqueries and use them for analytics.”
+                                                               Real-World Use	“At Fifth Third Bank, I used SQL subqueries to compare transaction patterns and detect fraud.”
 
 
 
