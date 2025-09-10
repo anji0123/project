@@ -670,6 +670,25 @@ and also give real time usecase of my client 5/3 bank
                                                                        🧑‍💼 Real-Time Use Case @ 5/3 Bank
                                                                        “We use multiple inheritance to build modular ETL components. For example, one class handles Azure Synapse connectivity, another handles PySpark transformations, and a third class inherits both to orchestrate the full pipeline.”
                                                                        
+                                                                 1. Stateless Logger (No __init__)
+                                                                 python
+                                                                 class Logger:
+                                                                     def log(self, message):
+                                                                         print("Log:", message)
+                                                                 
+                                                                 job = Logger()
+                                                                 job.log("Pipeline started")  # ✅ Message passed at method call
+                                                                 2. Stateful Logger (With __init__)
+                                                                 python
+                                                                 class Logger:
+                                                                     def __init__(self, message):
+                                                                         self.message = message
+                                                                 
+                                                                     def log(self):
+                                                                         print("Log:", self.message)
+                                                                 
+                                                                 job = Logger("Pipeline started")  # ✅ Message stored at object creation
+                                                                 job.log()
                                                                        🗃️ SQL – EXISTS vs IN
                                                                        🔍 Theory: Difference Between IN and EXISTS
                                                                        Feature	IN	EXISTS
