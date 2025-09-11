@@ -752,7 +752,111 @@ Theory Q: Difference between ANY and ALL operators?
 Code Q: Find employees earning more than ALL employees in dept 10.
 
 
-
+                                                                         🐍 Python OOP – Polymorphism & Method Overriding
+                                                                         📘 Theory: What Is Method Overriding?
+                                                                         Method overriding allows a subclass to provide a specific implementation of a method that is already defined in its parent class.
+                                                                         
+                                                                         🔍 Key Concepts:
+                                                                         Enables polymorphism: same method name, different behavior.
+                                                                         
+                                                                         Promotes code reuse and specialization.
+                                                                         
+                                                                         The method in the child class replaces the one in the parent class when called on a child object.
+                                                                         
+                                                                         ✅ Why It Matters:
+                                                                         You can treat different objects uniformly while letting them behave differently.
+                                                                         
+                                                                         Makes your code scalable, clean, and extensible.
+                                                                         
+                                                                         🧪 Code: Animal → Dog Class (Method Overriding)
+                                                                         python
+                                                                         class Animal:
+                                                                             def speak(self):
+                                                                                 return "Animal makes a sound"
+                                                                         
+                                                                         class Dog(Animal):
+                                                                             def speak(self):
+                                                                                 return "Dog barks"
+                                                                         
+                                                                         # Example usage
+                                                                         animal = Animal()
+                                                                         dog = Dog()
+                                                                         
+                                                                         print(animal.speak())  # Output: Animal makes a sound
+                                                                         print(dog.speak())     # Output: Dog barks
+                                                                         🔍 Explanation:
+                                                                         Dog inherits from Animal.
+                                                                         
+                                                                         Dog overrides the speak() method.
+                                                                         
+                                                                         When dog.speak() is called, Python uses the child class’s version.
+                                                                         
+                                                                         🏦 Real-Time Use Case at Fifth Third Bank
+                                                                         Imagine you're building a transaction validation engine:
+                                                                         
+                                                                         python
+                                                                         class Transaction:
+                                                                             def validate(self):
+                                                                                 return "Basic validation"
+                                                                         
+                                                                         class WireTransfer(Transaction):
+                                                                             def validate(self):
+                                                                                 return "Validate SWIFT code"
+                                                                         
+                                                                         class ACHTransfer(Transaction):
+                                                                             def validate(self):
+                                                                                 return "Validate routing number"
+                                                                         Now you can loop through transactions:
+                                                                         
+                                                                         python
+                                                                         transactions = [WireTransfer(), ACHTransfer()]
+                                                                         for txn in transactions:
+                                                                             print(txn.validate())
+                                                                         Each transaction knows how to validate itself—no need for if statements or manual type checks.
+                                                                         
+                                                                         💬 Interview Tip: “We used method overriding to encapsulate validation logic for different transaction types. This allowed our Azure Data Factory pipelines to process diverse financial records without branching logic.”
+                                                                         
+                                                                         🗃️ SQL – ANY & ALL Operators
+                                                                         📘 Theory: Difference Between ANY and ALL
+                                                                         🔹 ANY Operator
+                                                                         Returns TRUE if the condition is true for at least one value in the subquery.
+                                                                         
+                                                                         Think: “Is this value greater than any one of the others?”
+                                                                         
+                                                                         🔹 ALL Operator
+                                                                         Returns TRUE only if the condition is true for every value in the subquery.
+                                                                         
+                                                                         Think: “Is this value greater than all of the others?”
+                                                                         
+                                                                         🔍 Comparison Table
+                                                                         Operator	Condition Must Be True For	Use Case
+                                                                         ANY	At least one value	Loose comparison
+                                                                         ALL	Every value	Strict comparison
+                                                                         🧪 Code: Employees Earning More Than ALL in Dept 10
+                                                                         sql
+                                                                         SELECT * FROM employees
+                                                                         WHERE salary > ALL (
+                                                                           SELECT salary FROM employees WHERE dept_id = 10
+                                                                         );
+                                                                         🔍 Explanation:
+                                                                         Subquery returns all salaries in department 10.
+                                                                         
+                                                                         Outer query returns employees whose salary is greater than every salary in that department.
+                                                                         
+                                                                         🏦 Real-Time Use Case at Fifth Third Bank
+                                                                         Imagine you're analyzing executive compensation:
+                                                                         
+                                                                         Use ALL to find employees earning more than everyone in a specific department (e.g., Risk Management).
+                                                                         
+                                                                         Use ANY to find employees earning more than at least one person in that department.
+                                                                         
+                                                                         💬 Interview Tip: “We used ALL to identify outlier salaries for compliance audits. By comparing executive pay against departmental benchmarks, we flagged anomalies and pushed alerts into Azure Synapse for downstream analysis.”
+                                                                         
+                                                                         ✅ Final Summary
+                                                                         Topic	Theory	Code	Real-World Use
+                                                                         Python Method Overriding	Child class redefines parent method	Dog.speak() overrides Animal.speak()	Transaction-specific validation logic
+                                                                         SQL ANY	True if condition matches any value	salary > ANY (...)	Loose salary comparison
+                                                                         SQL ALL	True if condition matches all values	salary > ALL (...)	Strict salary benchmarking
 Sep 10 (Wed)
 
 Python: OOP – Encapsulation
