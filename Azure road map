@@ -857,6 +857,15 @@ Code Q: Find employees earning more than ALL employees in dept 10.
                                                                          Python Method Overriding	Child class redefines parent method	Dog.speak() overrides Animal.speak()	Transaction-specific validation logic
                                                                          SQL ANY	True if condition matches any value	salary > ANY (...)	Loose salary comparison
                                                                          SQL ALL	True if condition matches all values	salary > ALL (...)	Strict salary benchmarking
+
+
+
+
+
+IN,ANY AND ALL lo where condition lo ay column name istamo adhe column name ni retrive cheyali sub query lo
+select/....where salary > (select salary...) 
+
+only existlo matram no need of column name Select.....where exists (select 1....)
 Sep 10 (Wed)
 
 Python: OOP – Encapsulation
