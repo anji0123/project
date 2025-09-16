@@ -1234,6 +1234,144 @@ Theory Q: Difference between module and package in Python?
 
 Code Q: Create a package with math utilities and import it.
 
+                                                                                                                                                                                                          (
+                                                                                                                                                                                                          create a add.py file
+                                                                                                                                                                                                          def add(a,b):
+                                                                                                                                                                                                              return a+b
+                                                                                                                                                                                                          
+                                                                                                                                                                                                          then do same to multiply 
+                                                                                                                                                                                                          def multiply(a,b):
+                                                                                                                                                                                                              return a*b
+                                                                                                                                                                                                          
+                                                                                                                                                                                                          now , we create an __init__ file
+                                                                                                                                                                                                          from .add import add
+                                                                                                                                                                                                          from .multiply import multiply
+                                                                                                                                                                                                          
+                                                                                                                                                                                                          now we keep all this files in a folder named math_utils
+                                                                                                                                                                                                          
+                                                                                                                                                                                                          -----------------------------------------------------------
+                                                                                                                                                                                                          main code
+                                                                                                                                                                                                          
+                                                                                                                                                                                                          from math_utils import add, multiply
+                                                                                                                                                                                                          adding = add(3,5)
+                                                                                                                                                                                                          print(adding)
+
+                                                                                                                           
+                                                                                                                           🟢 Step 0: Prerequisites
+                                                                                                                           Before we begin, make sure:
+                                                                                                                           
+                                                                                                                           You have Python installed (check by running python --version in your terminal)
+                                                                                                                           
+                                                                                                                           You have a code editor (like VS Code, PyCharm, or even Notepad++)
+                                                                                                                           
+                                                                                                                           You know how to navigate folders on your computer
+                                                                                                                           
+                                                                                                                           🟡 Step 1: Create Your Project Folder
+                                                                                                                           Let’s call your project my_project.
+                                                                                                                           
+                                                                                                                           Open your file explorer
+                                                                                                                           
+                                                                                                                           Create a folder named my_project
+                                                                                                                           
+                                                                                                                           Inside my_project, create another folder called math_utils
+                                                                                                                           
+                                                                                                                           Your structure now looks like:
+                                                                                                                           
+                                                                                                                           Code
+                                                                                                                           my_project/
+                                                                                                                           └── math_utils/
+                                                                                                                           🟠 Step 2: Create Your Modules
+                                                                                                                           Inside math_utils, create these files:
+                                                                                                                           
+                                                                                                                           🔹 add.py
+                                                                                                                           python
+                                                                                                                           def add(a, b):
+                                                                                                                               return a + b
+                                                                                                                           🔹 multiply.py
+                                                                                                                           python
+                                                                                                                           def multiply(a, b):
+                                                                                                                               return a * b
+                                                                                                                           These are your modules—each .py file contains reusable functions.
+                                                                                                                           
+                                                                                                                           🔵 Step 3: Create __init__.py
+                                                                                                                           Inside math_utils, create a file named __init__.py. This file makes math_utils a package.
+                                                                                                                           
+                                                                                                                           🔹 __init__.py
+                                                                                                                           python
+                                                                                                                           from .add import add
+                                                                                                                           from .multiply import multiply
+                                                                                                                           This tells Python:
+                                                                                                                           
+                                                                                                                           “When someone imports math_utils, give them access to add and multiply.”
+                                                                                                                           
+                                                                                                                           🟣 Step 4: Create Your Main Script
+                                                                                                                           Go back to the my_project folder and create a new file called main.py.
+                                                                                                                           
+                                                                                                                           🔹 main.py
+                                                                                                                           python
+                                                                                                                           from math_utils import add, multiply
+                                                                                                                           
+                                                                                                                           print("Add:", add(5, 3))         # Output: 8
+                                                                                                                           print("Multiply:", multiply(4, 2))  # Output: 8
+                                                                                                                           🟤 Step 5: Run Your Code
+                                                                                                                           Now open your terminal or command prompt:
+                                                                                                                           
+                                                                                                                           Navigate to your project folder:
+                                                                                                                           
+                                                                                                                           bash
+                                                                                                                           cd path/to/my_project
+                                                                                                                           Run your script:
+                                                                                                                           
+                                                                                                                           bash
+                                                                                                                           python main.py
+                                                                                                                           ✅ You should see:
+                                                                                                                           
+                                                                                                                           Code
+                                                                                                                           Add: 8
+                                                                                                                           Multiply: 8
+                                                                                                                           Boom! You just created and used a Python package locally.
+                                                                                                                           
+                                                                                                                           🏦 Real-Time Use Case at Fifth Third Bank
+                                                                                                                           At 5/3 Bank, developers use packages like this to:
+                                                                                                                           
+                                                                                                                           Organize financial tools (e.g., loan_utils, tax_utils)
+                                                                                                                           
+                                                                                                                           Share reusable code across teams
+                                                                                                                           
+                                                                                                                           Keep sensitive logic modular and testable
+                                                                                                                           
+                                                                                                                           💬 Interview Tip: “We built internal packages for financial calculations and exposed only validated functions via __init__.py. This helped us maintain clean architecture and reduce risk in production systems.”
+                                                                                                                           
+                                                                                                                           ✅ Final Folder Structure
+                                                                                                                           Code
+                                                                                                                           my_project/
+                                                                                                                           ├── main.py
+                                                                                                                           └── math_utils/
+                                                                                                                               ├── __init__.py
+                                                                                                                               ├── add.py
+                                                                                                                               └── multiply.py
+                                                                                                                           🧠 Summary of Key Concepts
+                                                                                                                           Concept	What It Means
+                                                                                                                           Module	A single .py file with reusable code
+                                                                                                                           Package	A folder with modules + __init__.py
+                                                                                                                           __init__.py	Controls what gets exposed when importing
+                                                                                                                           Import Shortcut	from math_utils import add works because of __init__.py
+
+                                                                           
+                                                                           Without __init__.py:
+                                                                           You’d have to write:
+                                                                           
+                                                                           python
+                                                                           from math_utils.add import add
+                                                                           from math_utils.multiply import multiply
+                                                                           With __init__.py containing:
+                                                                           python
+                                                                           from .add import add
+                                                                           from .multiply import multiply
+                                                                           You can now write:
+                                                                           
+                                                                           python
+                                                                           from math_utils import add, multiply
 
 SQL: Functions in SQL
 
