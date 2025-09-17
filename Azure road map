@@ -1379,7 +1379,97 @@ Theory Q: Difference between scalar and table-valued functions?
 
 Code Q: Write a function to return total salary of a department.
 
-
+                                                                                 
+                                                                                 🧾 Code Q: Scalar Function to Return Total Salary of a Department
+                                                                                 Let’s say you have a table called employees with columns:
+                                                                                 
+                                                                                 employee_id
+                                                                                 
+                                                                                 name
+                                                                                 
+                                                                                 salary
+                                                                                 
+                                                                                 department_id
+                                                                                 
+                                                                                 ✅ SQL Server Syntax
+                                                                                 sql
+                                                                                 CREATE FUNCTION dbo.TotalSalaryByDept(@DeptID INT)
+                                                                                 RETURNS INT
+                                                                                 AS
+                                                                                 BEGIN
+                                                                                     DECLARE @Total INT;
+                                                                                 
+                                                                                     SELECT @Total = SUM(salary)
+                                                                                     FROM employees
+                                                                                     WHERE department_id = @DeptID;
+                                                                                 
+                                                                                     RETURN @Total;
+                                                                                 END;
+                                                                                 🔹 How to Use It
+                                                                                 sql
+                                                                                 SELECT dbo.TotalSalaryByDept(3);  -- Returns total salary for department ID 3
+                                                                                 ✅ This is a scalar function because it returns one value (the total salary).
+                                                                                 
+                                                                                 🧠 Internal Behavior Explained
+                                                                                 Here’s what happens step-by-step when you call the function:
+                                                                                 
+                                                                                 You pass a department ID (e.g., 3)
+                                                                                 
+                                                                                 SQL runs the query:
+                                                                                 
+                                                                                 sql
+                                                                                 SELECT SUM(salary) FROM employees WHERE department_id = 3
+                                                                                 The result is stored in the variable @Total
+                                                                                 
+                                                                                 The function returns that value
+                                                                                 
+                                                                                 🔍 Can You Use Other Columns Inside?
+                                                                                 Yes, but only for internal logic. You cannot return multiple columns from a scalar function.
+                                                                                 
+                                                                                 If you want to return a full list of employees, you need a table-valued function.
+                                                                                 
+                                                                                 📦 Table-Valued Function Example (Bonus)
+                                                                                 ✅ Function to Return All Employees in a Department
+                                                                                 sql
+                                                                                 CREATE FUNCTION dbo.GetEmployeesByDept(@DeptID INT)
+                                                                                 RETURNS TABLE
+                                                                                 AS
+                                                                                 RETURN (
+                                                                                     SELECT employee_id, name, salary
+                                                                                     FROM employees
+                                                                                     WHERE department_id = @DeptID
+                                                                                 );
+                                                                                 🔹 How to Use It
+                                                                                 sql
+                                                                                 SELECT * FROM dbo.GetEmployeesByDept(3);
+                                                                                 ✅ This returns a full table of employees in department 3.
+                                                                                 
+                                                                                 🏦 Real-Time Use Case at Fifth Third Bank (5/3 Bank)
+                                                                                 At 5/3 Bank, SQL functions are used to:
+                                                                                 
+                                                                                 🔹 Scalar Functions
+                                                                                 Calculate total payroll per department
+                                                                                 
+                                                                                 Return bonus amounts, tax deductions, or threshold flags
+                                                                                 
+                                                                                 Feed summary widgets in dashboards
+                                                                                 
+                                                                                 🔹 Table-Valued Functions
+                                                                                 Return lists of employees, transactions, or alerts
+                                                                                 
+                                                                                 Power reporting tools and compliance filters
+                                                                                 
+                                                                                 Enable dynamic joins in analytics queries
+                                                                                 
+                                                                                 💬 Interview Tip: “We used scalar functions to encapsulate payroll logic and table-valued functions to drive dynamic reporting. This separation helped us optimize performance and maintain clarity in our analytics pipeline.”
+                                                                                 
+                                                                                 ✅ Interview-Ready Summary
+                                                                                 Topic	Key Concept	Example
+                                                                                 SQL Function	Reusable logic that returns a result	CREATE FUNCTION
+                                                                                 Scalar Function	Returns one value	dbo.TotalSalaryByDept()
+                                                                                 Table-Valued Function	Returns a table	dbo.GetEmployeesByDept()
+                                                                                 Real-World Use	Payroll, reporting, dashboards	Used at 5/3 Bank for salary summaries
+                                                                                 Best Practices	Avoid side effects, keep logic simple	Use indexes for performance
 
 
 ---
