@@ -1476,7 +1476,7 @@ Code Q: Write a function to return total salary of a department.
 
 Week 4
 
-Sep 15 (Mon)
+Sep 22 (Mon)
 
 Python: Iterators & Generators
 
@@ -1493,7 +1493,7 @@ Code Q: Create an index on salary column.
 
 
 
-Sep 16 (Tue)
+Sep 23 (Tue)
 
 Python: Decorators
 
@@ -1510,7 +1510,7 @@ Code Q: Create a view showing employee name and dept.
 
 
 
-Sep 17 (Wed)
+Sep 24 (Wed)
 
 Python: Itertools
 
@@ -1527,7 +1527,7 @@ Code Q: Use CTE to calculate running total of salaries.
 
 
 
-Sep 18 (Thu)
+Sep 25 (Thu)
 
 Python: Collections Module
 
@@ -1544,7 +1544,7 @@ Code Q: Assign row numbers to employees ordered by salary.
 
 
 
-Sep 19 (Fri)
+Sep 26 (Fri)
 
 Python: Multithreading
 
@@ -1566,7 +1566,7 @@ Code Q: Find top 3 earners in each department.
 
 Week 5
 
-Sep 22 (Mon)
+Sep 29 (Mon)
 
 Python: Multiprocessing
 
@@ -1583,7 +1583,7 @@ Code Q: Find running total of salary partitioned by dept.
 
 
 
-Sep 23 (Tue)
+Sep 30 (Tue)
 
 Python: Virtual Environments
 
@@ -1600,7 +1600,7 @@ Code Q: Show cumulative salary by employee order.
 
 
 
-Sep 24 (Wed)
+oct 1 (Wed)
 
 Python: Pip & Package Management
 
@@ -1617,7 +1617,7 @@ Code Q: Print hierarchy of employees under a manager.
 
 
 
-Sep 25 (Thu)
+oct 2 (Thu)
 
 Python: JSON Handling
 
@@ -1634,7 +1634,7 @@ Code Q: Demonstrate BEGIN, COMMIT, ROLLBACK.
 
 
 
-Sep 26 (Fri)
+oct 3 (Fri)
 
 Python: Regex Basics
 
@@ -1656,7 +1656,7 @@ Code Q: Create a trigger to log updates on salary.
 
 Week 6
 
-Sep 29 (Mon)
+oct 6 (Mon)
 
 Python: Advanced Regex
 
@@ -1673,7 +1673,7 @@ Code Q: Normalize a sample employee table to 3NF.
 
 
 
-Sep 30 (Tue)
+oct 7 (Tue)
 
 Python: Date & Time
 
@@ -1690,7 +1690,7 @@ Code Q: Merge dept and employee table into a denormalized view.
 
 
 
-Oct 1 (Wed)
+Oct 8 (Wed)
 
 Python: Logging
 
@@ -1707,7 +1707,7 @@ Code Q: Procedure to fetch top N salaries by dept.
 
 
 
-Oct 2 (Thu)
+Oct 9 (Thu)
 
 Python: Unit Testing
 
@@ -1724,7 +1724,7 @@ Code Q: Write function to calculate factorial.
 
 
 
-Oct 3 (Fri)
+Oct 10 (Fri)
 
 Python: Itertools Advanced
 
@@ -1740,9 +1740,7 @@ Theory Q: When does index slow down performance?
 Code Q: Create composite index on (dept, salary).
 
 
-
-
----
+------------------------------------------------------DATES WERE CHANGED TILL HERE ONLY ---------------------------------------------------------------------------------
 
 Week 7
 
