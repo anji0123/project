@@ -1607,6 +1607,105 @@ Code Q: Write a generator for Fibonacci numbers.
                                                 Value: 2
                                                 Calling __next__
                                                 See? __iter__() is called once, then __next__() takes over.
+                                                                                                                  🧑‍💻 Method 1: Generator with a Limit (Fixed Count)
+                                                                                                                  This version generates a fixed number of Fibonacci numbers—great for when you know how many you want.
+                                                                                                                  
+                                                                                                                  ✅ Code:
+                                                                                                                  python
+                                                                                                                  def fibonacci_generator(limit):
+                                                                                                                      a, b = 0, 1
+                                                                                                                      count = 0
+                                                                                                                      while count < limit:
+                                                                                                                          yield a
+                                                                                                                          a, b = b, a + b
+                                                                                                                          count += 1
+                                                                                                                  
+                                                                                                                  # Example usage:
+                                                                                                                  for num in fibonacci_generator(10):
+                                                                                                                      print(num)
+                                                                                                                  🔍 What It Does:
+                                                                                                                  Starts with a = 0, b = 1
+                                                                                                                  
+                                                                                                                  Yields one number per loop
+                                                                                                                  
+                                                                                                                  Stops after limit numbers
+                                                                                                                  
+                                                                                                                  🧑‍💻 Method 2: Infinite Generator (Manual Control with next())
+                                                                                                                  This version keeps generating Fibonacci numbers forever—you control how many to print.
+                                                                                                                  
+                                                                                                                  ✅ Code:
+                                                                                                                  python
+                                                                                                                  def fibonacci_generator():
+                                                                                                                      a, b = 0, 1
+                                                                                                                      while True:
+                                                                                                                          yield a
+                                                                                                                          a, b = b, a + b
+                                                                                                                  
+                                                                                                                  # Example usage:
+                                                                                                                  gen = fibonacci_generator()
+                                                                                                                  for _ in range(10):
+                                                                                                                      print(next(gen))
+                                                                                                                  🔍 What It Does:
+                                                                                                                  Keeps yielding numbers endlessly
+                                                                                                                  
+                                                                                                                  You use next() to manually get values
+                                                                                                                  
+                                                                                                                  range(10) limits the loop to 10 prints
+                                                                                                                  
+                                                                                                                  🧠 Summary
+                                                                                                                  Method	Description	Best For
+                                                                                                                  1	Fixed count with limit parameter	Controlled output
+                                                                                                                  2	Infinite stream with manual control	Streaming or flexible logic
+                                                                                                                                                                  Yes, you're absolutely right—and it's a great observation! The for loop behaves differently in the two Fibonacci generator methods because it's working with two different types of generator behavior. Let's break it down clearly:
+                                                                                                                                                                  
+                                                                                                                                                                  🧑‍💻 Method 1: Generator with a Limit
+                                                                                                                                                                  python
+                                                                                                                                                                  def fibonacci_generator(limit):
+                                                                                                                                                                      a, b = 0, 1
+                                                                                                                                                                      count = 0
+                                                                                                                                                                      while count < limit:
+                                                                                                                                                                          yield a
+                                                                                                                                                                          a, b = b, a + b
+                                                                                                                                                                          count += 1
+                                                                                                                                                                  
+                                                                                                                                                                  for num in fibonacci_generator(10):
+                                                                                                                                                                      print(num)
+                                                                                                                                                                  🔍 How the for Loop Works Here:
+                                                                                                                                                                  The generator knows when to stop because of the limit.
+                                                                                                                                                                  
+                                                                                                                                                                  The for loop automatically calls next() until the generator is exhausted.
+                                                                                                                                                                  
+                                                                                                                                                                  You don’t need to control the loop—it’s self-contained.
+                                                                                                                                                                  
+                                                                                                                                                                  ✅ This is a bounded loop: it ends when the generator runs out of values.
+                                                                                                                                                                  
+                                                                                                                                                                  🧑‍💻 Method 2: Infinite Generator + Manual Loop Control
+                                                                                                                                                                  python
+                                                                                                                                                                  def fibonacci_generator():
+                                                                                                                                                                      a, b = 0, 1
+                                                                                                                                                                      while True:
+                                                                                                                                                                          yield a
+                                                                                                                                                                          a, b = b, a + b
+                                                                                                                                                                  
+                                                                                                                                                                  gen = fibonacci_generator()
+                                                                                                                                                                  for _ in range(10):
+                                                                                                                                                                      print(next(gen))
+                                                                                                                                                                  🔍 How the for Loop Works Here:
+                                                                                                                                                                  The generator never stops on its own (while True)
+                                                                                                                                                                  
+                                                                                                                                                                  You use range(10) to limit how many times you call next()
+                                                                                                                                                                  
+                                                                                                                                                                  The for loop is controlling the number of iterations manually
+                                                                                                                                                                  
+                                                                                                                                                                  ✅ This is an unbounded generator: you decide when to stop.
+                                                                                                                                                                  
+                                                                                                                                                                  🧠 Summary of Differences
+                                                                                                                                                                  Feature	Method 1 (Limit)	Method 2 (Infinite)
+                                                                                                                                                                  Generator stops itself	✅ Yes	❌ No
+                                                                                                                                                                  for loop behavior	Iterates until generator ends	Iterates fixed number of times
+                                                                                                                                                                  Control of loop	Inside generator	Outside using range()
+                                                                                                                                                                  Use of next()	Implicit via for	Explicit via next()
+
 
 SQL: Indexing
 
