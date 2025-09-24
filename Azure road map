@@ -1815,6 +1815,55 @@ EXPLAIN me step by step internally what happens in backend through code
                                                                      DELETE: Removes pointer from index
                                                                      
                                                                      Let me know if you want to simulate this with sample data or visualize the B-tree structures — I can walk you through that interactively!
+                                        🌳 What Is a Leaf Node?
+                                        In SQL, indexes are usually stored as B-trees (balanced trees). These trees have:
+                                        
+                                        Root node: the top of the tree
+                                        
+                                        Intermediate nodes: branches that guide the search
+                                        
+                                        Leaf nodes: the bottom layer that holds the actual index values
+                                        
+                                        📌 Clustered Index: Leaf Nodes Contain Data
+                                        In a clustered index, the leaf nodes are the actual data rows. So when you reach a leaf node, you’re done—you already have the full row.
+                                        
+                                        📌 Non-Clustered Index: Leaf Nodes Contain Pointers
+                                        In a non-clustered index, the leaf nodes contain:
+                                        
+                                        The indexed value (e.g., Salary = 50000)
+                                        
+                                        A pointer to the actual row in the table
+                                        
+                                        This pointer is called a row locator or row ID. It tells SQL:
+                                        
+                                        “Here’s where you’ll find the full row in the clustered index or heap.”
+                                        
+                                        🧠 Visual Analogy
+                                        Imagine a library:
+                                        
+                                        Non-clustered index is like a card catalog:
+                                        
+                                        You find a card for “Salary = 50000”
+                                        
+                                        The card says: “Go to shelf 3, row 7”
+                                        
+                                        That’s the leaf node pointer
+                                        
+                                        Clustered index is like the shelf itself:
+                                        
+                                        You walk directly to shelf 3 and the books are already sorted by EmployeeID
+                                        
+                                        🔁 What Happens During a Query
+                                        sql
+                                        SELECT * FROM Employees WHERE Salary = 50000;
+                                        SQL searches the non-clustered index for 50000
+                                        
+                                        Finds it in a leaf node
+                                        
+                                        Uses the pointer to jump to the actual row in the table
+                                        
+                                        Retrieves full data
+
 
 give me everything needed in these topics to cover from 0 to 100 in a very cool way simply to understand for 
 a fresher cover headline theory codes and all other required to understande these topics
