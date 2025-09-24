@@ -1863,7 +1863,8 @@ EXPLAIN me step by step internally what happens in backend through code
                                         Uses the pointer to jump to the actual row in the table
                                         
                                         Retrieves full data
-
+                                                                   “If EmployeeID is the clustered index, then the leaf node contains the full row for that employee. 
+                                                                   If Salary is a non-clustered index, the leaf node contains the salary value and a pointer to the full row.”
 
 give me everything needed in these topics to cover from 0 to 100 in a very cool way simply to understand for 
 a fresher cover headline theory codes and all other required to understande these topics
