@@ -1870,7 +1870,7 @@ give me everything needed in these topics to cover from 0 to 100 in a very cool 
 a fresher cover headline theory codes and all other required to understande these topics
 EXPLAIN me step by step internally what happens in backend through code
 
-Sep 23 (Tue)
+Sep 30 (Tue)
 
 Python: Decorators
 
@@ -1887,7 +1887,7 @@ Code Q: Create a view showing employee name and dept.
 
 
 
-Sep 24 (Wed)
+Oct 1 (Wed)
 
 Python: Itertools
 
@@ -1904,7 +1904,7 @@ Code Q: Use CTE to calculate running total of salaries.
 
 
 
-Sep 25 (Thu)
+Oct 2 (Thu)
 
 Python: Collections Module
 
@@ -1921,7 +1921,7 @@ Code Q: Assign row numbers to employees ordered by salary.
 
 
 
-Sep 26 (Fri)
+Oct 3 (Fri)
 
 Python: Multithreading
 
@@ -1943,7 +1943,7 @@ Code Q: Find top 3 earners in each department.
 
 Week 5
 
-Sep 29 (Mon)
+Oct 6 (Mon)
 
 Python: Multiprocessing
 
@@ -1960,7 +1960,7 @@ Code Q: Find running total of salary partitioned by dept.
 
 
 
-Sep 30 (Tue)
+Oct 7 (Tue)
 
 Python: Virtual Environments
 
@@ -1977,7 +1977,7 @@ Code Q: Show cumulative salary by employee order.
 
 
 
-oct 1 (Wed)
+oct 8 (Wed)
 
 Python: Pip & Package Management
 
@@ -1994,7 +1994,7 @@ Code Q: Print hierarchy of employees under a manager.
 
 
 
-oct 2 (Thu)
+oct 9 (Thu)
 
 Python: JSON Handling
 
@@ -2011,7 +2011,7 @@ Code Q: Demonstrate BEGIN, COMMIT, ROLLBACK.
 
 
 
-oct 3 (Fri)
+oct 10 (Fri)
 
 Python: Regex Basics
 
@@ -2033,7 +2033,7 @@ Code Q: Create a trigger to log updates on salary.
 
 Week 6
 
-oct 6 (Mon)
+oct 13 (Mon)
 
 Python: Advanced Regex
 
@@ -2050,7 +2050,7 @@ Code Q: Normalize a sample employee table to 3NF.
 
 
 
-oct 7 (Tue)
+oct 14 (Tue)
 
 Python: Date & Time
 
@@ -2067,7 +2067,7 @@ Code Q: Merge dept and employee table into a denormalized view.
 
 
 
-Oct 8 (Wed)
+Oct 15 (Wed)
 
 Python: Logging
 
@@ -2084,7 +2084,7 @@ Code Q: Procedure to fetch top N salaries by dept.
 
 
 
-Oct 9 (Thu)
+Oct 16 (Thu)
 
 Python: Unit Testing
 
@@ -2101,7 +2101,7 @@ Code Q: Write function to calculate factorial.
 
 
 
-Oct 10 (Fri)
+Oct 17 (Fri)
 
 Python: Itertools Advanced
 
