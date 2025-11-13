@@ -1,0 +1,125 @@
+param (
+    [string]$oldWorkspaceName,
+    [string]$newWorkspaceName,
+    [string]$ticketId
+)
+
+# =========================
+# CONFIGURATION
+# =========================
+$tenantId = "<your-tenant-id>"
+$appId = "<your-app-id>"
+$appSecret = "<your-app-secret>"
+$servicenowInstance = "<your-instance>.service-now.com"
+$servicenowToken = "<your-servicenow-token>"
+
+# Mapping logic for entitlements based on new workspace name
+$publisherGroupId = "g.aPBI_${newWorkspaceName}_PROD_PUBLISHER"
+$viewerGroupId = "g.aPBI_${newWorkspaceName}_PROD_VIEWER"
+
+# =========================
+# AUTHENTICATION
+# =========================
+$authUrl = "https://login.microsoftonline.com/$tenantId/oauth2/token"
+$authBody = @{
+    resource      = "https://analysis.windows.net/powerbi/api"
+    client_id     = $appId
+    client_secret = $appSecret
+    grant_type    = "client_credentials"
+}
+
+try {
+    $authResponse = Invoke-RestMethod -Method Post -Uri $authUrl -Body $authBody
+    $token = $authResponse.access_token
+    $headers = @{ Authorization = "Bearer $token" }
+} catch {
+    $errorMsg = "❌ Authentication failed: $_"
+    goto LogToServiceNow
+}
+
+# =========================
+# GET WORKSPACE ID
+# =========================
+try {
+    $workspaceList = Invoke-RestMethod -Uri "https://api.powerbi.com/v1.0/myorg/groups" -Headers $headers
+    $workspace = $workspaceList.value | Where-Object { $_.name -eq $oldWorkspaceName }
+
+    if (-not $workspace) {
+        $errorMsg = "❌ Workspace '$oldWorkspaceName' not found."
+        goto LogToServiceNow
+    }
+
+    $workspaceId = $workspace.id
+} catch {
+    $errorMsg = "❌ Failed to retrieve workspace list: $_"
+    goto LogToServiceNow
+}
+
+# =========================
+# RENAME WORKSPACE
+# =========================
+try {
+    $renameBody = @{ name = $newWorkspaceName } | ConvertTo-Json -Depth 2
+    Invoke-RestMethod -Method Patch `
+        -Uri "https://api.powerbi.com/v1.0/myorg/groups/$workspaceId" `
+        -Headers $headers `
+        -Body $renameBody
+} catch {
+    $errorMsg = "❌ Failed to rename workspace: $_"
+    goto LogToServiceNow
+}
+
+# =========================
+# ASSIGN NEW ENTITLEMENTS
+# =========================
+function Add-GroupAccess {
+    param (
+        [string]$groupId,
+        [string]$accessRight
+    )
+    $body = @{
+        identifier             = $groupId
+        groupUserAccessRight   = $accessRight
+        principalType          = "Group"
+    } | ConvertTo-Json -Depth 2
+
+    try {
+        Invoke-RestMethod -Method Post `
+            -Uri "https://api.powerbi.com/v1.0/myorg/groups/$workspaceId/users" `
+            -Headers $headers `
+            -Body $body
+    } catch {
+        $errorMsg = "❌ Failed to assign $accessRight access to group $groupId: $_"
+        goto LogToServiceNow
+    }
+}
+
+Add-GroupAccess -groupId $publisherGroupId -accessRight "Member"
+Add-GroupAccess -groupId $viewerGroupId -accessRight "Viewer"
+
+# =========================
+# SUCCESS MESSAGE
+# =========================
+$logMessage = "✅ Workspace renamed from '$oldWorkspaceName' to '$newWorkspaceName'. Entitlements updated successfully."
+
+goto LogToServiceNow
+
+# =========================
+# LOG TO SERVICENOW
+# =========================
+:LogToServiceNow
+if ($errorMsg) { $logMessage = $errorMsg }
+
+try {
+    Invoke-RestMethod -Method Patch `
+        -Uri "https://$servicenowInstance/api/now/table/sc_req_item/$ticketId" `
+        -Headers @{
+            Authorization = "Bearer $servicenowToken"
+            "Content-Type" = "application/json"
+        } `
+        -Body (@{ comments = $logMessage } | ConvertTo-Json -Depth 2)
+} catch {
+    Write-Error "❌ Failed to update ServiceNow ticket: $_"
+}
+
+Write-Output $logMessage
