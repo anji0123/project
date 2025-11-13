@@ -1,0 +1,43 @@
+import requests
+from msal import ConfidentialClientApplication
+
+# -----------------------------
+# 🔐 Azure AD Authentication
+# -----------------------------
+TENANT_ID = "your-tenant-id"
+CLIENT_ID = "your-client-id"
+CLIENT_SECRET = "your-client-secret"
+AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
+SCOPE = ["https://graph.microsoft.com/.default"]
+
+app = ConfidentialClientApplication(
+    client_id=CLIENT_ID,
+    authority=AUTHORITY,
+    client_credential=CLIENT_SECRET
+)
+
+token = app.acquire_token_for_client(scopes=SCOPE)
+access_token = token.get("access_token")
+headers = {
+    "Authorization": f"Bearer {access_token}",
+    "Content-Type": "application/json"
+}
+
+# -----------------------------
+# 🧹 Workspace Deletion Function
+# -----------------------------
+def delete_workspace(workspace_id):
+    url = f"https://api.powerbi.com/v1.0/myorg/groups/{workspace_id}"
+    response = requests.delete(url, headers=headers)
+    if response.status_code == 200:
+        print(f"✅ Workspace {workspace_id} deleted successfully.")
+    else:
+        print(f"❌ Failed to delete workspace {workspace_id}: {response.text}")
+
+# -----------------------------
+# 🚀 Triggered by ServiceNow
+# -----------------------------
+if __name__ == "__main__":
+    # Example: workspace ID passed from ServiceNow
+    workspace_id = "your-workspace-id-from-servicenow"
+    delete_workspace(workspace_id)

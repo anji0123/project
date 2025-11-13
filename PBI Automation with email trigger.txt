@@ -1,0 +1,101 @@
+import os
+import sys
+import requests
+import smtplib
+from email.mime.text import MIMEText
+from datetime import datetime
+from msal import ConfidentialClientApplication
+
+# -----------------------------
+# 🔐 Azure AD Authentication
+# -----------------------------
+TENANT_ID = os.environ["TENANT_ID"]
+CLIENT_ID = os.environ["CLIENT_ID"]
+CLIENT_SECRET = os.environ["CLIENT_SECRET"]
+AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
+SCOPE = ["https://graph.microsoft.com/.default"]
+
+app = ConfidentialClientApplication(
+    client_id=CLIENT_ID,
+    authority=AUTHORITY,
+    client_credential=CLIENT_SECRET
+)
+
+token = app.acquire_token_for_client(scopes=SCOPE)
+access_token = token.get("access_token")
+headers = {
+    "Authorization": f"Bearer {access_token}",
+    "Content-Type": "application/json"
+}
+
+# -----------------------------
+# 🧹 Workspace Deletion Function
+# -----------------------------
+def delete_workspace(workspace_id):
+    url = f"https://api.powerbi.com/v1.0/myorg/groups/{workspace_id}"
+    response = requests.delete(url, headers=headers)
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    if response.status_code == 200:
+        message = f"[{timestamp}] ✅ Workspace {workspace_id} deleted successfully."
+        print(message)
+        log_action(message)
+        send_email_alert(workspace_id, success=True)
+    else:
+        error_msg = response.text
+        message = f"[{timestamp}] ❌ Failed to delete workspace {workspace_id}: {error_msg}"
+        print(message)
+        log_action(message)
+        send_email_alert(workspace_id, success=False, error=error_msg)
+
+# -----------------------------
+# 📧 Email Alert Function
+# -----------------------------
+def send_email_alert(workspace_id, success=True, error=None):
+    sender = os.environ["EMAIL_SENDER"]
+    recipient = os.environ["EMAIL_RECIPIENT"]
+    email_password = os.environ["EMAIL_PASSWORD"]
+    smtp_server = os.environ["SMTP_SERVER"]
+    smtp_port = int(os.environ.get("SMTP_PORT", 587))
+
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    subject = f"Power BI Workspace Deletion - {'Success' if success else 'Failure'}"
+    body = f"""
+    Workspace ID: {workspace_id}
+    Timestamp: {timestamp}
+    Status: {'Deleted successfully ✅' if success else 'Deletion failed ❌'}
+    {f'Error: {error}' if error else ''}
+    """
+
+    msg = MIMEText(body)
+    msg["Subject"] = subject
+    msg["From"] = sender
+    msg["To"] = recipient
+
+    try:
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()
+            server.login(sender, email_password)
+            server.sendmail(sender, recipient, msg.as_string())
+        print("📧 Email alert sent.")
+    except Exception as e:
+        print(f"⚠️ Failed to send email: {e}")
+        log_action(f"[{timestamp}] ⚠️ Email alert failed: {e}")
+
+# -----------------------------
+# 🧾 Logging Function
+# -----------------------------
+def log_action(message):
+    with open("workspace_deletion.log", "a") as log:
+        log.write(f"{message}\n")
+
+# -----------------------------
+# 🚀 Triggered by ServiceNow
+# -----------------------------
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("❗ Please provide a workspace ID as an argument.")
+        sys.exit(1)
+
+    workspace_id = sys.argv[1]
+    delete_workspace(workspace_id)

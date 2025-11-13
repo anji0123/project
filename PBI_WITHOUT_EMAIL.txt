@@ -1,0 +1,74 @@
+import requests
+from msal import ConfidentialClientApplication
+
+# -----------------------------
+# 🔐 Azure AD Authentication
+# -----------------------------
+TENANT_ID = "your-tenant-id"
+CLIENT_ID = "your-client-id"
+CLIENT_SECRET = "your-client-secret"
+AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
+SCOPE = ["https://graph.microsoft.com/.default"]
+
+app = ConfidentialClientApplication(
+    client_id=CLIENT_ID,
+    authority=AUTHORITY,
+    client_credential=CLIENT_SECRET
+)
+
+token = app.acquire_token_for_client(scopes=SCOPE)
+access_token = token.get("access_token")
+headers = {
+    "Authorization": f"Bearer {access_token}",
+    "Content-Type": "application/json"
+}
+
+# -----------------------------
+# 👥 Role Change Function
+# -----------------------------
+def update_workspace_role(workspace_id, user_email, role):
+    url = f"https://api.powerbi.com/v1.0/myorg/groups/{workspace_id}/users"
+    body = {
+        "emailAddress": user_email,
+        "groupUserAccessRight": role  # "Admin", "Contributor", "Viewer"
+    }
+    response = requests.post(url, headers=headers, json=body)
+    if response.status_code == 200:
+        print(f"✅ Role updated for {user_email} in workspace {workspace_id}")
+    else:
+        print(f"❌ Failed to update role: {response.text}")
+
+# -----------------------------
+# 🧹 Workspace Deletion Function
+# -----------------------------
+def delete_workspace(workspace_id):
+    # Optional: Validate workspace status or archive metadata here
+    url = f"https://api.powerbi.com/v1.0/myorg/groups/{workspace_id}"
+    response = requests.delete(url, headers=headers)
+    if response.status_code == 200:
+        print(f"✅ Workspace {workspace_id} deleted successfully")
+    else:
+        print(f"❌ Failed to delete workspace: {response.text}")
+
+# -----------------------------
+# 🧾 Audit Logging (Optional)
+# -----------------------------
+def log_action(action_type, details):
+    with open("audit_log.txt", "a") as log:
+        log.write(f"{action_type}: {details}\n")
+
+# -----------------------------
+# 🚀 Example Usage
+# -----------------------------
+if __name__ == "__main__":
+    # Example role change
+    update_workspace_role(
+        workspace_id="your-workspace-id",
+        user_email="newuser@example.com",
+        role="Contributor"
+    )
+    log_action("RoleChange", "Assigned Contributor to newuser@example.com")
+
+    # Example workspace deletion
+    delete_workspace(workspace_id="your-workspace-id")
+    log_action("WorkspaceDeletion", "Deleted workspace your-workspace-id")

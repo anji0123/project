@@ -1,0 +1,22 @@
+Steps to follow in implementing this in our 5/3 bank
+----------------------------------------------------------------------------------
+
+First, write the Python script that deletes a Power BI workspace using the Power BI REST API. It should take a workspace ID as input and delete that workspace. Make sure it uses Azure AD authentication with MSAL to get the access token.
+
+Once the script works, turn it into a small web service. Use Flask or FastAPI in Python. Create a POST endpoint like /delete_workspace that accepts a JSON body with the workspace ID.
+
+Host this web service somewhere that ServiceNow can reach. Best option is to use Azure Functions or AWS Lambda. If not, use a secure VM or server with HTTPS enabled.
+
+Secure the API. Don’t leave it open. Use an API key or token in the request headers. The script should check for this key before doing anything.
+
+In ServiceNow, create a new catalog item. This is the form users will fill out to request a workspace deletion. Add a field for the workspace ID.
+
+Go to Flow Designer in ServiceNow. Create a new flow that starts when someone submits the catalog item.
+
+In the flow, add a REST step. Set it to POST. Use the URL of your hosted script. In the body, pass the workspace ID from the form.
+
+Test everything. Submit a request in ServiceNow. Make sure the script runs, the workspace is deleted, and the response comes back correctly.
+
+Add logging to your script. Every time it deletes a workspace, it should write the workspace ID and timestamp to a log file. This helps with tracking and troubleshooting.
+
+Write down how everything works. Include where the script is hosted, what the API expects, how ServiceNow connects to it, and who to contact if something breaks.
