@@ -1,0 +1,396 @@
+Received: from TY0PR02MB5744.apcprd02.prod.outlook.com (2603:1096:400:1b4::13)
+ by SG2PR02MB5484.apcprd02.prod.outlook.com with HTTPS; Fri, 26 Dec 2025
+ 17:05:56 +0000
+Received: from SG2P153CA0033.APCP153.PROD.OUTLOOK.COM (2603:1096:4:c7::20) by
+ TY0PR02MB5744.apcprd02.prod.outlook.com (2603:1096:400:1b4::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9434.10; Fri, 26 Dec
+ 2025 17:05:52 +0000
+Received: from SG2PEPF000B66CE.apcprd03.prod.outlook.com
+ (2603:1096:4:c7:cafe::4d) by SG2P153CA0033.outlook.office365.com
+ (2603:1096:4:c7::20) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9478.3 via Frontend Transport; Fri,
+ 26 Dec 2025 17:05:50 +0000
+Authentication-Results: spf=pass (sender IP is 20.219.105.132)
+ smtp.mailfrom=cognizant.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=cognizant.com;
+Received-SPF: Pass (protection.outlook.com: domain of cognizant.com designates
+ 20.219.105.132 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.219.105.132; helo=mail.cognizant.com; pr=E
+Received: from mail.cognizant.com (20.219.105.132) by
+ SG2PEPF000B66CE.mail.protection.outlook.com (10.167.240.21) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9456.9 via Frontend Transport; Fri, 26 Dec 2025 17:05:52 +0000
+Received: from CAZINSIPV788512.cts.com (10.153.66.86) by
+ CAZINSIPV788683.cts.com (10.153.12.53) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.36; Fri, 26 Dec 2025 17:05:32 +0000
+Received: from CAZINSIPV788403.cts.com (10.153.66.85) by
+ CAZINSIPV788512.cts.com (10.153.66.86) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.36; Fri, 26 Dec 2025 17:05:32 +0000
+Received: from CAZINSIPV788869.cts.com (10.153.66.88) by
+ CAZINSIPV788403.cts.com (10.153.66.85) with Microsoft SMTP Server id
+ 15.2.1544.36 via Frontend Transport; Fri, 26 Dec 2025 17:05:32 +0000
+Received: from 343-func-sendinforequest-6594ffcfdf-rldgj (10.153.228.229) by
+ CAZINSIPV788869.cts.com (10.153.66.88) with Microsoft SMTP Server id
+ 15.2.1544.36; Fri, 26 Dec 2025 17:05:30 +0000
+From: <HumanResources@cognizant.com>
+Date: Fri, 26 Dec 2025 17:05:30 +0000
+Subject: Notification for you: Your Last working date has been auto-updated
+Message-ID: <95684KAZ2SU4.RF0W7JS7B4CR2@343-func-sendinforequest-6594ffcfdf-rldgj>
+To: <Lakkaraju.VaraPrasad2@cognizant.com>
+CC: <Medidi.JoshiPrabhakar@cognizant.com>, <Atul.Kumar5@cognizant.com>
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Return-Path: HumanResources@cognizant.com
+Received-SPF: SoftFail (CAZINSIPV788869.cts.com: domain of transitioning
+ HumanResources@cognizant.com discourages use of 10.153.228.229 as permitted
+ sender)
+X-CrossPremisesHeadersFilteredBySendConnector: CAZINSIPV788869.cts.com
+X-OrganizationHeadersPreserved: CAZINSIPV788869.cts.com
+X-OrganizationHeadersPreserved: CAZINSIPV788512.cts.com
+X-MS-Exchange-Organization-ExpirationStartTime: 26 Dec 2025 17:05:52.2858
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: c2c481d6-c02d-48a8-f7e2-08de44a10682
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Organization-MessageDirectionality: Originating
+X-MS-Exchange-Organization-AuthSource: CAZINSIPV788403.cts.com
+X-MS-Exchange-Organization-AuthAs: Internal
+X-MS-Exchange-Organization-AuthMechanism: 10
+X-CrossPremisesHeadersPromoted: SG2PEPF000B66CE.apcprd03.prod.outlook.com
+X-CrossPremisesHeadersFiltered: SG2PEPF000B66CE.apcprd03.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SG2PEPF000B66CE:EE_|TY0PR02MB5744:EE_|SG2PR02MB5484:EE_
+X-OriginatorOrg: mail.cognizant.com
+X-MS-Office365-Filtering-Correlation-Id: c2c481d6-c02d-48a8-f7e2-08de44a10682
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|366016|69100299015|8096899003|41050700001;
+X-Forefront-Antispam-Report: CIP:20.219.105.132;CTRY:IN;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:mail.cognizant.com;PTR:cogsihyedgeobptr3.southindia.cloudapp.azure.com;CAT:NONE;SFS:(13230040)(82310400026)(366016)(69100299015)(8096899003)(41050700001);DIR:INT;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Dec 2025 17:05:52.1045
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c2c481d6-c02d-48a8-f7e2-08de44a10682
+X-MS-Exchange-CrossTenant-Id: de08c407-19b9-427d-9fe8-edf254300ca7
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=de08c407-19b9-427d-9fe8-edf254300ca7;Ip=[20.219.105.132];Helo=[mail.cognizant.com]
+X-MS-Exchange-CrossTenant-AuthSource: CAZINSIPV788403.cts.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY0PR02MB5744
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.9420324
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9434.000
+X-Message-Flag: Flag for follow up
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(425001)(930201)(20251009114)(140003)(1420198);
+X-Microsoft-Antispam-Message-Info:
+	pD1+iBdi0rVCF9CGTqo1tROJuSwoAYSTMjKEFWPtdzAv1mfbeBZSAGLTFBTN6pVy/1cup6Qs/XOjnBTXgQT6jBTKdQA/RrKl3+eoAX9R55CFroE0YYVhsfCmS9jMCA6K1+D6VON7qqVKxqTUQhIcQvsW95v02SGalzzIPluW32PRKzrxwlMPYPAg4cHh9DHdd0uJsXpfD0+5k7dlMLY0xR9rRgRIN1x2j2y/jSrfOVWFQknBbEEIkRJH+08l4PCOfRH35FBJJ38+lX6iZWj18oNF1XhoED77NZZGy4yesG07Ou09hZeL9DCT9de7zHkm79VRHXOnE82fOjFaOJJdCk/HnUdc0/4sNHl7IW6yVII39LJWchTpnYOOZ0C/KG/S4WHMlrqGdcOlz3RM2fweP0OqBGQCxJEutyhU6FcBoUXSPG3qDF3Fg1byVjl5WDj6wirfo8tcOJYozsr2Zf0rm+dk9bAOvfgne+PpDLEqSmi4M9J+wQYR5yciJ4khn0/TWJngoXz0WBL+kKkyURnOqnWQqnN5LHa5i+NIVGBn6XgsgetJxDtQ8NgKpUF9EpfkWnFTGJmZduzJid1aWGEMOVF81NVCxJVERrMkp0cwj2n71qycMa6Gr3THN/wOcnt2HRudkNJCSP/tVGiWE5DurzrJazQr39HqGASjeKEz0E/n6Sj4EnlT9eFNpHrbOhj/JkgPS/d0lb8+5tvQAN7/uz2Tf8EuhOgk51n746sZEv9GZ8mFQbtLHZMKi5wLWn91jvwrDOxCtmYAmsQJnZyB8TEYMhIvU0AjK954u5BNnvZu1ap21w7DzQKZKOUDn0kSQu6Z9jyPHt8U+Fl61EfEJw==
+MIME-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.=
+org/1999/xhtml"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><t=
+itle>One Cognizant Template</title>          <style type=3D"text/css">     =
+                     body{                  background-color: rgb(242,242,2=
+42);              }             body,            td,            th {       =
+       font-family: Arial,"Segoe UI", Verdana, Helvetica, sans-serif;      =
+        font-size: 14px;              color: #000048;              margin: =
+0px;            }            table,            td {              vertical-a=
+lign: top;            }            a img {              border: 0px;       =
+     } .linkblock a{ text-decoration:underline}            a {             =
+ color: #2F78C4;              text-decoration: none;                      }=
+            a:visited {              text-decoration: none !important;     =
+       }            a:focus {              text-decoration: none !important=
+;            }            a:hover {              text-decoration: none !imp=
+ortant;            }            .mail-container {              background-c=
+olor: white;              font-size: 14px;              color: #3e4c51;    =
+          width: 100%;            }            .template-table {           =
+   border-collapse: collapse;            }            .template-table td { =
+             padding: 8px 16px;              color: #000048;              b=
+order: 1px solid #7F7F7F;              font-size: 14px;            }  #Requ=
+estInformation > td {    padding-top: 24px;}           a.mailtoLink {      =
+        color: #FFFFFF;              font-size: 14px;  font-weight: bold;  =
+       }            .linkblock {              width: 216px;              ba=
+ckground: #00B0F0;              color: #000048;              text-align: ce=
+nter;              padding: 10px 0;            }            .padding-xl {  =
+            padding: 15px 32px;              background: white;            =
+}            p.infopart {              padding: 3px 0;              color: =
+#000048;            }            h2 {              font-weight: bold;      =
+        color: #2F78C4;              font-size: 14px;     margin: 0;       =
+     }            .titlepart {              padding: 12px 32px;            =
+background-color: white;  font-weight: bold;              color: #2F78C4;  =
+            font-size: 14px;          }            .psnote {              p=
+adding: 15px 32px;              background-color: white;              font-=
+size: 12px;              color: #53565A;            }            .foot-tab =
+{              padding: 8px 32px;              /* background: #000048; */  =
+          }            .foot-img1 {              width: 100%;        paddin=
+g: 6px 6px 6px 32px;  background: white;           }            .foot-img2 =
+{              width: 47px;              height: 50px;            }        =
+    #foot-txt {              text-align: left;              padding-left: 2=
+0px;              color: #040506;              width: 520px;              h=
+eight: 50px;              background-color: rgb(0, 0, 0);              font=
+-size: 14px;              text-overflow: clip;              overflow: hidde=
+n;            } #mobilityPromo{background-color: white}            #dynamic=
+ {              background-color: rgb(0, 0, 0);              width: 47px;  =
+          }            .wide {              width: 750px;     }            =
+.main-container {              margin: 0 auto;            }            #hea=
+derimg {              height: 53px;            }            #headerimg td {=
+              width: 306px;            }            /* new CSS */          =
+  #headerimg td {              background-color: rgb(0, 51, 160);          =
+  }   #RequestDetails{background-color: #FFFFFF}         #RequestDetails p =
+{              color: #000048;              font-size: 14px;              l=
+ine-height: 1.4;            }            #UnsubscribeSection {             =
+ color: #53565A;            }            #RequestOtherDetails p {          =
+    color: #000048;            } #RequestOtherDetails > td {              p=
+adding-top: 24px;            } #RequestOtherDetails p {              backgr=
+ound-color: #FFFFFF;            } #valedictionSection td {              pad=
+ding-top: 24px;            }            #ApprovalMethods p {              c=
+olor: #000048;            } #ApprovalMethods td {              padding-top:=
+ 24px;            }  #ApprovalMethods {              background-color: #FFF=
+FFF;            } #twoWayReplyButtons{              background-color: #FFFF=
+FF;            } #twoWayReplyButtons > td {padding-top: 24px;}             =
+#valedictionSection p {              color: #000048;            }  #valedic=
+tionSection {            background-color: white;           } #RequestInfor=
+mation{background-color: #FFFFFF;}           .linkblock {              bord=
+er-left: 1px solid white;              border-right: 1px solid white;      =
+      }       #footerImage{            background-color: white;        }   =
+       </style>        </head>              <body>          <table width=3D=
+"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">            <tr>   =
+           <td>                <center>                  <table class=3D"wi=
+de" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 0 aut=
+o;">                    <tr id=3D"headerImage">                      <td>  =
+                      <table class=3D"wide" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">                          <tr class=3D"wide" id=3D"head=
+erimg">                            <td style=3D"background-color: #000048;p=
+adding: 24px 32px">                              <img alt=3D"img left" src=
+=3D"https://1ct.es/343/Images/CognizantBrandLogo.png">                     =
+       </td>                                                </tr>          =
+              </table>                      </td>                    </tr> =
+                   <tr>                      <td>  <table width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td><div class=3D"mail-c=
+ontainer"><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0">
+<tr id=3D"SaluationSection"><br>
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head><meta name=3D"Generator" content=3D"Micro=
+soft Word 15 (filtered medium)"><style></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D'edit' spidmax=3D'1026' />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D'edit'>
+<o:idmap v:ext=3D'edit' data=3D'1' />
+</o:shapelayout></xml><![endif]--></head><body lang=3D"EN-US" link=3D"#0563=
+C1" vlink=3D"#954F72"><div class=3D"WordSection1"><p class=3D"MsoNormal" st=
+yle=3D"line-height:150%"><span style=3D"font-size:10.0pt;line-height:150%;f=
+ont-family:" Trebuchet=3D"" MS?,sans-serif?=3D"">HI Lakkaraju Anjaneya Vara=
+ Prasad,<o:p></o:p></span></p><p class=3D"MsoListParagraph" style=3D"mso-ma=
+rgin-top-alt:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;margi=
+n-bottom:.0001pt;mso-add-space:auto;text-indent:-.25in;mso-list:l0 level1 l=
+fo1"><![if !supportLists]><span style=3D"font-size:10.0pt;line-height:115%;=
+font-family:Wingdings"><span style=3D"mso-list:Ignore">=C2=A7<span style=3D=
+"font:7.0pt " Times=3D"" New=3D"" Roman??=3D"">&nbsp; </span></span></span>=
+<![endif]><span style=3D"font-size:10.0pt;line-height:115%;font-family:" Tr=
+ebuchet=3D"" MS?,sans-serif?=3D"">We value your association with Cognizant =
+and also understand the fact that the discussion on the final decision is s=
+till in progress, however as per the offer terms your last working day has =
+been automatically updated by the system as <i>03/18/2026 (Wednesday) </i> =
+and this may be subject to change. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:=
+p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-fa=
+mily:" Trebuchet=3D"" MS?,sans-serif?=3D""><o:p>&nbsp;</o:p></span></p>
+
+<table class=3D"MsoTableGrid" border=3D"1" cellspacing=3D"0" cellpadding=3D=
+"0" width=3D"0" style=3D"width:256.5pt;margin-left:23.4pt;border-collapse:c=
+ollapse;border:none"><tr style=3D"height:15.7pt">
+<td width=3D"73" style=3D"width:55.05pt;border:solid #00B050 1.0pt;backgrou=
+nd:#92D050;padding:0in 5.4pt 0in 5.4pt;height:15.7pt"><p class=3D"MsoNormal=
+" align=3D"center" style=3D"margin-left:3.25pt;text-align:center"><span sty=
+le=3D"font-size:10.0pt;font-family:" Trebuchet=3D"" MS?,sans-serif?=3D"">ID=
+<o:p></o:p></span></p></td><td width=3D"137" style=3D"width03/18/2026.45pt;=
+border:solid #00B050 1.0pt;border-left:none;background:#92D050;padding:0in =
+5.4pt 0in 5.4pt;height:15.7pt"><p class=3D"MsoNormal" align=3D"center" styl=
+e=3D"text-align:center"><span style=3D"font-size:10.0pt;font-family:" Trebu=
+chet=3D"" MS?,sans-serif?=3D"">Associate Name<o:p></o:p></span></p></td><td=
+ width=3D"132" style=3D"width:99.0pt;border:solid #00B050 1.0pt;border-left=
+:none;background:#92D050;padding:0in 5.4pt 0in 5.4pt;height:15.7pt"><p clas=
+s=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span style=3D=
+"font-size:10.0pt;font-family:" Trebuchet=3D"" MS?,sans-serif?=3D"">Last Wo=
+rking Date<o:p></o:p></span></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-size:10.0pt;font-family:" Trebuchet=3D"" MS?,sans-serif?=3D"">=
+(mm/dd/yyyy)<o:p></o:p></span></p></td></tr>
+<tr style=3D"height:13.45pt"><td width=3D"73" valign=3D"top" style=3D"width=
+:55.05pt;border:solid #00B050 1.0pt;border-top:none;padding:0in 5.4pt 0in 5=
+.4pt;height:13.45pt"><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt=
+;font-family:" Trebuchet=3D"" MS?,sans-serif?=3D""><o:p>2320471</o:p></span=
+></p></td><td width=3D"137" valign=3D"top" style=3D"width03/18/2026.45pt;bo=
+rder-top:none;border-left:none;border-bottom:solid #00B050 1.0pt;border-rig=
+ht:solid #00B050 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:13.45pt"><p class=
+=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:" Trebuchet=3D""=
+ MS?,sans-serif?=3D""><o:p>Lakkaraju Anjaneya Vara Prasad</o:p></span></p><=
+/td><td width=3D"132" valign=3D"top" style=3D"width:99.0pt;border-top:none;=
+border-left:none;border-bottom:solid #00B050 1.0pt;border-right:solid #00B0=
+50 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:13.45pt"><p class=3D"MsoNormal"=
+><span style=3D"font-size:10.0pt;font-family:" Trebuchet=3D"" MS?,sans-seri=
+f?=3D""><o:p>03/18/2026</o:p></span></p></td></tr></table>
+
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:" Trebuc=
+het=3D"" MS?,sans-serif?=3D"">&nbsp;&nbsp; <o:p></o:p></span></p><p class=
+=3D"MsoListParagraphCxSpFirst" style=3D"margin-right:5.25pt;mso-add-space:a=
+uto;text-align:justify;text-indent:-.25in;mso-list:l2 level1 lfo2"><![if !s=
+upportLists]><span style=3D"font-size:10.0pt;line-height:115%;font-family:W=
+ingdings"><span style=3D"mso-list:Ignore">&nbsp;<span style=3D"font:7.0pt "=
+ Times=3D"" New=3D"" Roman??=3D"">&nbsp;&nbsp; </span></span></span><![endi=
+f]><span style=3D"font-size:10.0pt;line-height:115%;font-family:" Trebuchet=
+=3D"" MS?,sans-serif?=3D"">Should there be any concerns, please reach out t=
+o your <a href=3D"https://compass.talent.cognizant.com/psp/HCMPRD/EMPLOYEE/=
+HRMS/c/CT_ROLE_EMPLOYEE.CT_HCMSUP_DTLS.GBL?FolderPath=3DPORTAL_ROOT_OBJECT.=
+CO_EMPLOYEE_SELF_SERVICE.HC_PERSONAL_INFO_ESS.CT_HCMSUP_DTLS_GBL&amp;IsFold=
+er=3Dfalse&amp;IgnoreParamT"><span style=3D"color:#0070C0">Home Manager/ ta=
+lent manager</span></a><span style=3D"color:#0070C0"> </span><o:p></o:p></s=
+pan></p><p class=3D"MsoListParagraphCxSpMiddle" style=3D"margin-right:5.25p=
+t;mso-add-space:auto;text-align:justify;text-indent:-.25in;mso-list:l2 leve=
+l1 lfo2"><![if !supportLists]><span style=3D"font-size:10.0pt;line-height:1=
+15%;font-family:Wingdings"><span style=3D"mso-list:Ignore">&nbsp;<span styl=
+e=3D"font:7.0pt " Times=3D"" New=3D"" Roman??=3D"">&nbsp;&nbsp; </span></sp=
+an></span><![endif]><span style=3D"font-size:10.0pt;line-height:115%;font-f=
+amily:" Trebuchet=3D"" MS?,sans-serif?=3D""><b>Kindly note, your salary pro=
+cessing during notice period is subject to clearance of dues;</b> you can l=
+og into Clearance App in One Cognizant (4 hours post update of LWD) to trac=
+k and close on your dues, if any. <o:p></o:p></span></p><p class=3D"MsoList=
+ParagraphCxSpMiddle" style=3D"mso-margin-top-alt:0in;margin-right:5.25pt;ma=
+rgin-bottom:10.0pt;margin-left:.25in;mso-add-space:auto;text-align:justify"=
+><span style=3D"font-size:10.0pt;line-height:115%;font-family:" Trebuchet=
+=3D"" MS?,sans-serif?=3D""><o:p>&nbsp;</o:p></span></p>
+
+<p class=3D"MsoListParagraphCxSpMiddle" style=3D"mso-margin-top-alt:0in;mar=
+gin-right:5.25pt;margin-bottom:10.0pt;margin-left:.25in;mso-add-space:auto;=
+text-align:justify;text-indent:-.25in;mso-list:l0 level1 lfo1"><![if !suppo=
+rtLists]><span style=3D"font-size:10.0pt;line-height:115%;font-family:Wingd=
+ings"><span style=3D"mso-list:Ignore">=C2=A7<span style=3D"font:7.0pt " Tim=
+es=3D"" New=3D"" Roman??=3D"">&nbsp; </span></span></span><![endif]><span s=
+tyle=3D"font-size:10.0pt;line-height:115%;font-family:" Trebuchet=3D"" MS?,=
+sans-serif?=3D"">Please note summary on Leaves during notice period:<o:p></=
+o:p></span></p>
+
+<ul style=3D"list-style-type:circle">
+<li><span style=3D"font-size:10.0pt;line-height:115%;font-family:" Trebuche=
+t=3D"" MS?,sans-serif?=3D"">Availing Leave during the notice period is not =
+encouraged. <o:p></o:p></span></li>
+<li><span style=3D"font-size:10.0pt;line-height:115%;font-family:" Trebuche=
+t=3D"" MS?,sans-serif?=3D"">In case of any Medical emergency only <b>Sick l=
+eaves</b> (for up to 3 days) can be availed with HCM Supervisor approval (s=
+ubject to availability of Sick leave balance). <o:p></o:p></span></li>
+<li><span style=3D"font-size:10.0pt;line-height:115%;font-family:" Trebuche=
+t=3D"" MS?,sans-serif?=3D""><b>Compensatory Off</b> (subject to availabilit=
+y of Comp Off leave balance) /<b>LOP leaves</b> can be availed only when HC=
+M Supervisor approves.<o:p></o:p></span></li>
+<li><span style=3D"font-size:10.0pt;line-height:115%;font-family:" Trebuche=
+t=3D"" MS?,sans-serif?=3D""><b>Casual leaves and Earned leaves</b> cannot b=
+e availed during the Notice period.<o:p></o:p></span></li>
+<li><span style=3D"font-size:10.0pt;line-height:115%;font-family:" Trebuche=
+t=3D"" MS?,sans-serif?=3D""><b>LOP leave</b> can be availed for any other e=
+mergency other than sickness with HCM Supervisor approval.<o:p></o:p></span=
+></li>
+<li><span style=3D"font-size:10.0pt;line-height:115%;font-family:" Trebuche=
+t=3D"" MS?,sans-serif?=3D""><b>Paternity leave</b> can be availed by Men As=
+sociates with HCM Supervisor approval and Medical documentation.<o:p></o:p>=
+</span></li></ul>
+
+<br>
+
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:" Trebuc=
+het=3D"" MS?,sans-serif?=3D"">Thank you,<o:p></o:p></span></p><br><p class=
+=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:" Trebuchet=3D""=
+ MS?,sans-serif?=3D"">Exit Helpdesk =E2=80=93 India<o:p></o:p></span></p><p=
+ class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:" Trebuche=
+t=3D"" MS?,sans-serif?=3D""><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNorm=
+al"><o:p>&nbsp;</o:p></p></div></body></html>
+<b>Important Note:</b>
+<br><br>
+1.<i>We take this opportunity to remind you of the applicable non-solicitat=
+ion and non-compete obligations forming part of employment documents. Pleas=
+e note that you are prohibited from carrying away or disclosing any proprie=
+tary and/or confidential information of Cognizant. <b><i>Further, you shall=
+ not get associated with any Client of Cognizant, directly or indirectly th=
+rough a Competitor of Cognizant, including the last and most recent Client =
+supported by you during your tenure with Cognizant</i></b>.<i>Please also n=
+ote that these obligations shall continue to remain effective even after ce=
+ssation of your employment at Cognizant and in the event you are found to b=
+e in breach of these terms, such act would be considered to be a serious vi=
+olation of these obligations.</i>
+ <br>
+<i>Please also note that Cognizant won't hesitate to take any requisite leg=
+al action against you for breach of the obligations mentioned hereinabove f=
+or the purpose of protecting interests of Cognizant and its Clients. Any su=
+ch breach of obligations may lead to litigation against you &amp; your pros=
+pective employer and we also expressly reserve our right to pursue other re=
+medies available to us under law and equity.</i>
+<br><br>
+2.<i>Please note that all the Company assets (including, without limitation=
+, Company/client provided laptops, desktops, cellphones,data cards,USB stic=
+ks,documents,security cards etc.)have been provided to you purely for meeti=
+ng project deliverables and business purposes. Accordingly, you must return=
+ all Company or client assets in your possession to the respective Cognizan=
+t point of contact or as per the defined process in your country promptly o=
+n request or no later than your last working day before leaving Cognizant, =
+whichever is earlier.=20
+<br><br>
+3.Cognizant reserves the right (subject to applicable law) to wipe any or a=
+ll data, applications and other information or property from these Company =
+assets before or after your last working day. Failure to return assets as s=
+et out in this notice or as may otherwise be required by Cognizant makes yo=
+u liable to Cognizant for the value of the withheld assets, and this value =
+may (subject to applicable local law) be deducted from any payments due to =
+you from Cognizant. Regardless of whether or not such payments have been de=
+ducted, Cognizant also reserves its rights to commence legal proceedings ag=
+ainst you to
+recover any withheld assets and/or to notify the local police force or othe=
+r law enforcement authority and/or your prospective employer regarding your=
+ failure to return such company assets.
+<br><br>
+4.Timesheet entry is mandatory for all Cognizant associates including those=
+ in non-billable and corporate roles. Associates on Notice Period are also =
+mandated to submit Timesheets until the Last Working Date (LWD).Kindly ensu=
+re to submit the timesheet on time.You can access the timesheet module usin=
+g Desktop/Laptop/Mobile/Tablet for submitting the timesheet.</i><br><br><br=
+>
+* Please do not reply to this email as it is an auto generated trigger
+<tr id=3D"RequestDetails"></tr>
+<tr id=3D"RequestInformation"></tr>
+<tr id=3D"RequestOtherDetails">
+<td class=3D"padding-xl">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<p></p>
+</td>
+</tr>
+<tr id=3D"ApprovalMethods"></tr>
+<tr id=3D"twoWayReplyButtons"></tr>
+<tr id=3D"valedictionSection"></tr>
+<tr id=3D"twoWayReplyButtons">=20
+</table></div></td></tr></table></td></tr><tr id=3D"AutoGeneratedMailOneWay=
+">                     <td>                                 <table width=3D=
+"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">                   =
+                    <tr>                           <td class=3D"psnote" sty=
+le=3D"font-style: italic">                                <p>** This is an =
+auto generated mail. Please do not reply. **</p>                      </td>=
+                                             </tr>                    <!-- =
+<tr style=3D"height:10px;"></tr> -->                                  <tr i=
+d=3D"mobilityPromo">                        <td style=3D"text-align: center=
+;">                          <a target=3D"_blank" href=3D"https://onecogniz=
+ant.cognizant.com/">                                      <img style=3D"wid=
+th: 90%;" src=3D"https://1ct.es/343/Images/CF_Branding-GIF.gif" alt=3D"mobi=
+le promotion">                                  </a>                       =
+    </td>                           </tr>                                  =
+    <!-- <tr style=3D"height:10px;"></tr>-->                        </table=
+>                        </td>                      </tr><tr id=3D"footerIm=
+age"><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+><tr><td class=3D"foot-img1"><p style=3D"color: #000048;margin: 12px 0;font=
+-size: 10pt; font-family:Arial"><span>=C2=A9</span>  2025 Cognizant. All Ri=
+ghts Reserved. &nbsp; | &nbsp; <span>IT</span> </p></td><td><img src=3D"htt=
+ps://1ct.es/343/Images/footerImageTemplate2.jpg"></td></tr></table></tr></t=
+able>                  </center>              </td>          </tr>      </t=
+able>  </body>  </html>=
